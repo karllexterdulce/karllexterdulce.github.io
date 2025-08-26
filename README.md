@@ -1,6 +1,6 @@
 # Karl's Portfolio 👋
 
-Welcome to my personal portfolio website, built with **HTML** and **CSS** and hosted on **GitHub Pages**.
+Welcome to my personal portfolio website*.
 
 ## 🚀 Live Demo
 👉 [View Portfolio](https://yourusername.github.io/your-repo-name/)
