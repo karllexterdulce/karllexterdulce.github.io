@@ -6,6 +6,6 @@
 </head>
 <body>
   <h1>Hi, I’m Karl 👋</h1>
-  <p>Welcome to my portfolio website hosted on GitHub Pages!</p>
+  <p>Welcome to my portfolio website</p>
 </body>
 </html>
