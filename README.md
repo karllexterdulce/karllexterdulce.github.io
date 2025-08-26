@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website, built with **HTML** and **CSS** and hosted on **GitHub Pages**.
 
 ## 🚀 Live Demo
-👉 [View Portfolio](https://karllexter.github.io/your-repo-name/)
+👉 [View Portfolio](https://karllexter.github.io/karllexter/)
 
 ## 📂 Project Structure
 - `index.html` → Main page of the portfolio  
