@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Karl's Portfolio</title>
+  <title>Karl's Portfolio<title>
 </head>
 <body>
   <h1>Hi, I’m Karl 👋</h1>
