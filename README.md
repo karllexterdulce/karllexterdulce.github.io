@@ -1,9 +1,9 @@
 # Karl's Portfolio 👋
 
-Welcome to my personal portfolio website*.
+Welcome to my personal portfolio website, built with **HTML** and **CSS** and hosted on **GitHub Pages**.
 
 ## 🚀 Live Demo
-👉 [View Portfolio](https://yourusername.github.io/your-repo-name/)
+👉 [View Portfolio](https://karllexter.github.io/your-repo-name/)
 
 ## 📂 Project Structure
 - `index.html` → Main page of the portfolio  
@@ -11,9 +11,10 @@ Welcome to my personal portfolio website*.
 - `README.md` → This file  
 
 ## 📝 Features
-- Simple, clean design  
-- “About Me” section introducing myself  
-- Contact and footer section  
+- Clean, modern design inspired by Wix templates  
+- Responsive layout for all screen sizes  
+- Sections: About Me, Projects, Contact  
+- Hover effects on project cards and links  
 
 ## ⚙️ How to Run Locally
 1. Clone the repo:
