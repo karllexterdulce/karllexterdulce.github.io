@@ -11,12 +11,9 @@ Welcome to my personal portfolio website, built with **HTML** and **CSS** and ho
 - `README.md` → This file  
 
 ## 📝 Features
-- Simple, clean design with a responsive layout  
-- “About Me” section introducing myself as a writer and artist  
+- Simple, clean design  
+- “About Me” section introducing myself  
 - Contact and footer section  
-
-## 📸 Preview
-*(You can add a screenshot of your site here if you want)*  
 
 ## ⚙️ How to Run Locally
 1. Clone the repo:
