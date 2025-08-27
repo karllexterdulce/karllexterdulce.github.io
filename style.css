@@ -42,7 +42,7 @@ header {
   color: white;
   max-width: 800px; /* limits the width of your text */
   margin: 0 auto;   /* centers the text */
-  padding: 100px 20px;
+  padding: 120px 20px 60px; /* more space on top if you want */
 }
 
 .header-content h1, .header-content p {
