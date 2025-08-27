@@ -23,7 +23,7 @@ header {
   height: 400px;
   overflow: hidden;
   padding: 0 20px;
-  background-image: url('banner.jpg'); /* replace with your image file name */
+  background-video: url('banner.mp4'); /* replace with your video file name */
   background-size: cover;              /* makes it fill the header */
   background-position: center;         /* centers the image */
   background-repeat: no-repeat;        /* prevents tiling */
