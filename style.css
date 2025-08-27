@@ -10,6 +10,13 @@ body {
   line-height: 1.6;
 }
 
+/* Container to center content and add margins */
+.container {
+  max-width: 1000px;  /* limits the width of content */
+  margin: 0 auto;     /* centers horizontally */
+  padding: 0 20px;    /* adds space on left/right for small screens */
+}
+
 /* Header */
 header {
   position: relative;
