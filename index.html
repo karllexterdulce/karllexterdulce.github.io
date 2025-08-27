@@ -9,16 +9,16 @@
 </head>
 <body>
 
-<header>
-  <video autoplay muted loop playsinline id="banner-video">
-    <source src="banner.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="header-content">
-    <h1>Hi, I’m Karl 👋</h1>
-    <p>Welcome to my portfolio website</p>
-  </div>
-</header>
+header {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  padding: 0 20px;
+  background-image: url('banner.jpg'); /* your image file */
+  background-size: cover;             /* makes it cover the entire header */
+  background-position: center;        /* centers the image */
+  background-repeat: no-repeat;       /* prevents tiling */
+}
 
   <section class="about">
   <div class="container">
