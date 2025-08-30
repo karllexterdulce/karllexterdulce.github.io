@@ -62,6 +62,16 @@ header {
   font-size: 1.1em;
 }
 
+.cv-link {
+  text-decoration: underline;
+  color: #ffffff; /* change to your theme color */
+  font-weight: bold;
+}
+
+.cv-link:hover {
+  color: #cccccc; /* lighter gray on hover */
+}
+
 /* Projects Section */
 .projects-grid {
   display: grid;
