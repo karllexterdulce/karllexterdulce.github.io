@@ -21,17 +21,25 @@ header {
   height: 400px;
   overflow: hidden;
   padding: 0 20px;
-  background-color: #2e2e2e; /* dark gray background */
+  background-color: #2e2e2e; /* dark gray */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-#banner-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+.banner-text h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 56px; /* big headline */
+  color: white;
+  margin: 0;
+}
+
+.banner-text h2 {
+  font-family: "Times New Roman", serif;
+  font-size: 28px; /* smaller but still bigger than default */
+  color: #dcdcdc; /* slightly lighter gray so it stands out */
+  margin: 10px 0 0;
 }
 
 .header-content {
