@@ -58,6 +58,10 @@ header {
 }
 
 /* About Section */
+.about {
+  padding: 40px 80px; /* default desktop spacing */
+}
+
 .about p {
   font-size: 1.1em;
   font-family: 'Times New Roman', Times, serif;
@@ -76,10 +80,14 @@ header {
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Responsive: smaller text on mobile */
+/* Responsive: smaller text + more balanced margins on mobile */
 @media (max-width: 600px) {
+  .about {
+    padding: 30px 20px; /* top/bottom 30px, left/right 20px */
+  }
+
   .about p {
-    font-size: 1em; /* slightly smaller */
+    font-size: 1em;
   }
 
   .about a.cv-link {
@@ -87,7 +95,7 @@ header {
   }
 
   .about h1 {
-    font-size: 1.5em; /* adjust heading size for mobile */
+    font-size: 1.5em;
   }
 
   .about h2 {
