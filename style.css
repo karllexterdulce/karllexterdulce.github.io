@@ -112,16 +112,17 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: transparent; /* so it blends in */
+  background: transparent;
   padding: 15px 10px;
   display: flex;
-  gap: 40px; /* more spacing between words */
+  gap: 40px;
   justify-content: center;
   z-index: 1000;
 }
 
 .top-nav a {
-  color: white; /* makes text white */
+  font-family: Helvetica, Arial, sans-serif; /* Helvetica font */
+  color: gray; /* gray text */
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
@@ -129,7 +130,7 @@ html {
 }
 
 .top-nav a:hover {
-  color: #ddd; /* lighter gray when hovering */
+  color: #aaa; /* lighter gray when hovering */
 }
 
 /* CV link styles */
