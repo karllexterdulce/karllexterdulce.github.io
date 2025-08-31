@@ -118,19 +118,25 @@ html {
   gap: 40px;
   justify-content: center;
   z-index: 1000;
+  transition: background 0.3s ease;
 }
 
 .top-nav a {
-  font-family: Helvetica, Arial, sans-serif; /* Helvetica font */
-  color: gray; /* gray text */
+  font-family: Helvetica, Arial, sans-serif;
+  color: white; /* default white text */
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* smooth color change */
 }
 
-.top-nav a:hover {
-  color: #aaa; /* lighter gray when hovering */
+/* when navbar background is white */
+.top-nav.scrolled {
+  background: white;
+}
+
+.top-nav.scrolled a {
+  color: black; /* links turn black */
 }
 
 /* CV link styles */
