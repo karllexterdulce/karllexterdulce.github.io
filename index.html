@@ -3,112 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <style>
-    /* Reset & smooth scroll */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Helvetica, sans-serif;
-    }
-
-    /* Navbar */
-    .top-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
-
-    .top-nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    /* When scrolled */
-    .top-nav.scrolled {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .top-nav.scrolled a {
-      color: black;
-    }
-
-    /* Banner */
-    .banner {
-      height: 100vh;
-      background: url("your-banner.jpg") center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 2rem;
-    }
-
-    /* About section */
-    .about {
-      padding: 4rem 2rem;
-      background: #f5f5f5;
-    }
-  </style>
+  <title>Karl's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="top-nav">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <header>
+    <video autoplay muted loop playsinline id="banner-video">
+      <source src="banner.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="header-content">
+      <h1>Hi, I’m Karl 👋</h1>
+      <p>Welcome to my portfolio website</p>
+    </div>
+  </header>
 
-  <!-- Banner -->
-  <section class="banner">
-    <h1>Welcome to My Portfolio</h1>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about">
+  <section class="about container">
     <h2>About Me</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, risus eget.</p>
+    <p>I am a third-year college student, an aspiring professional writer, and an artist.</p>
   </section>
 
-  <section id="projects" class="about">
+  <section class="projects container">
     <h2>Projects</h2>
-    <p>Some of my works go here...</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Short Story Collection</h3>
+        <p>A collection of my original short stories.</p>
+        <a href="#">Read here</a>
+      </div>
+      <div class="project-card">
+        <h3>Digital Art Portfolio</h3>
+        <p>My digital illustrations and designs.</p>
+        <a href="#">View gallery</a>
+      </div>
+      <div class="project-card">
+        <h3>Blog Posts</h3>
+        <p>Thoughts and essays on writing and art.</p>
+        <a href="#">Visit blog</a>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="about">
+  <section class="contact container">
     <h2>Contact</h2>
-    <p>Let’s connect!</p>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a></p>
+    <p>Instagram: <a href="https://instagram.com/yourprofile">yourprofile</a></p>
   </section>
 
-  <!-- Script -->
-  <script>
-    window.addEventListener("scroll", function() {
-      const nav = document.querySelector(".top-nav");
-      if (window.scrollY > 50) { 
-        nav.classList.add("scrolled");
-      } else {
-        nav.classList.remove("scrolled");
-      }
-    });
-  </script>
+  <footer>
+    <p>© 2025 Karl. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
