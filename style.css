@@ -1,203 +1,107 @@
-/* Global Styles */
-body {
-  background-color: white;
-  color: #333;
-  font-family: 'Segoe UI', sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
-/* Reusable Container */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Header */
-header {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-  padding: 0 20px;
-  background-color: #2e2e2e; /* dark gray */
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  z-index: 1000;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Navbar after scroll */
+nav.scrolled {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav.scrolled ul li a {
+  color: black;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url("images/banner.jpg") no-repeat center center/cover;
+  display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
-}
-
-.banner-text h1 {
-  font-family: "Times New Roman", serif;
-  font-size: 56px; /* big headline */
   color: white;
-  margin: 0;
-}
-
-.banner-text h2 {
-  font-family: "Times New Roman", serif;
-  font-size: 28px; /* smaller but still bigger than default */
-  color: #dcdcdc; /* slightly lighter gray so it stands out */
-  margin: 10px 0 0;
-}
-
-.header-content {
   position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 100px 20px;
 }
 
-.header-content h1, 
-.header-content p {
-  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
 }
 
 /* About Section */
 .about {
-  padding: 40px 80px; /* default desktop spacing */
+  padding: 80px 10%;
+  background: #f9f9f9;
 }
 
-.about p {
-  font-size: 1.1em;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.about a.cv-link {
-  text-decoration: underline;
-  color: black;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-/* Headings default (desktop/tablet) */
-.about h1,
-.about h2 {
-  font-family: 'Times New Roman', Times, serif;
-}
-
-/* Responsive: smaller text + more balanced margins on mobile */
-@media (max-width: 600px) {
-  .about {
-    padding: 30px 20px; /* top/bottom 30px, left/right 20px */
-  }
-
-  .about p {
-    font-size: 1em;
-  }
-
-  .about a.cv-link {
-    font-size: 1em;
-  }
-
-  .about h1 {
-    font-size: 1.5em;
-  }
-
-  .about h2 {
-    font-size: 1.2em;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: transparent;
-  padding: 15px 10px;
+.about-container {
   display: flex;
+  align-items: center;
   gap: 40px;
-  justify-content: center;
-  z-index: 1000;
-  transition: background 0.3s ease;
 }
 
-.top-nav a {
-  font-family: Helvetica, Arial, sans-serif;
-  color: white; /* default white text */
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.3s ease; /* smooth color change */
+.about-container img {
+  width: 250px;
+  border-radius: 20px;
 }
 
-/* when navbar background is white */
-.top-nav.scrolled {
-  background: white;
+.about-text h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-.top-nav.scrolled a {
-  color: black; /* links turn black */
+/* Experience */
+.experience {
+  padding: 80px 10%;
+  text-align: center;
 }
 
-/* CV link styles */
-.cv-link {
-  text-decoration: underline;
-  color: #000000; /* black so it shows up */
-  font-weight: bold;
-}
-
-.cv-link:hover {
-  color: #444444; /* dark gray on hover */
-}
-
-.cv-link:hover {
-  color: #444444; /* dark gray on hover */
-}
-
-/* Projects Section */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.project-card a {
-  color: #2575fc;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-/* Contact Section */
-.contact a {
-  color: #2575fc;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
+.experience h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 /* Footer */
 footer {
+  background: #111;
+  color: white;
   text-align: center;
   padding: 20px;
-  background-color: #f5f5f5;
-  font-size: 0.9em;
-  color: #333;
 }
