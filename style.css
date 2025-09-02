@@ -58,21 +58,41 @@ header {
 }
 
 /* About Section */
-.about .container {
-  max-width: 800px;   /* limits width of content */
-  margin: 0 auto;     /* centers content */
-  padding: 20px;
-  font-family: "Times New Roman", Times, serif; /* everything inside uses Times New Roman */
-}
-
-.about h2 {
-  font-size: 36px;   /* make the heading bigger */
-  margin-bottom: 15px;
-}
-
 .about p {
   font-size: 1.1em;
-  line-height: 1.6;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.about a.cv-link {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Headings default (desktop/tablet) */
+.about h1,
+.about h2 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Responsive: smaller text on mobile */
+@media (max-width: 600px) {
+  .about p {
+    font-size: 1em; /* slightly smaller */
+  }
+
+  .about a.cv-link {
+    font-size: 1em;
+  }
+
+  .about h1 {
+    font-size: 1.5em; /* adjust heading size for mobile */
+  }
+
+  .about h2 {
+    font-size: 1.2em;
+  }
 }
 
 /* CV link styles */
