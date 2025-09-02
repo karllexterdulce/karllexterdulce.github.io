@@ -118,31 +118,31 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: transparent;
+  background: transparent; /* blends into background */
   padding: 15px 10px;
   display: flex;
-  gap: 40px;
+  gap: 40px; /* spacing between words */
   justify-content: center;
   z-index: 1000;
-  transition: background 0.3s ease;
 }
 
+/* Navigation links */
 .top-nav a {
-  font-family: Helvetica, Arial, sans-serif;
-  color: white; /* default white text */
+  color: white; /* white text */
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: color 0.3s ease; /* smooth color change */
+  transition: color 0.3s ease;
 }
 
-/* when navbar background is white */
-.top-nav.scrolled {
-  background: white;
+/* Hover effect */
+.top-nav a:hover {
+  color: #ddd; /* lighter gray when hovering */
 }
 
-.top-nav.scrolled a {
-  color: black; /* links turn black */
+/* Optional: add padding so sections don't get hidden behind the fixed nav */
+section {
+  padding: 100px 20px; /* adjust depending on your design */
 }
 
 /* CV link styles */
