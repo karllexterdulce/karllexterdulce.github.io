@@ -1,26 +1,62 @@
-/* Global Styles */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
 body {
   background-color: white;
   color: #333;
   font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.6;
 }
 
-/* Reusable Container */
+/* Container */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* Top Navigation */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  padding: 15px 10px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.top-nav a {
+  font-family: Helvetica, Arial, sans-serif;
+  color: white; /* default on banner */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.top-nav.scrolled {
+  background: white; /* nav gets white bg after scroll */
+}
+
+.top-nav.scrolled a {
+  color: black; /* links turn black */
+}
+
 /* Header */
 header {
   position: relative;
-  height: 400px;
+  height: 100vh;
   overflow: hidden;
-  padding: 0; /* remove extra margin */
 }
 
 #banner-video {
@@ -40,20 +76,20 @@ header {
   color: white;
   max-width: 800px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 200px 20px;
 }
 
-.header-content h1, 
+.header-content h1,
 .header-content p {
-  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* About Section */
+/* About */
 .about p {
   font-size: 1.1em;
 }
 
-/* Projects Section */
+/* Projects */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -69,7 +105,7 @@ header {
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-card a {
@@ -82,7 +118,7 @@ header {
   text-decoration: underline;
 }
 
-/* Contact Section */
+/* Contact */
 .contact a {
   color: #2575fc;
   text-decoration: none;
