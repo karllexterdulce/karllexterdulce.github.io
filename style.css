@@ -15,46 +15,38 @@ body {
   padding: 0 20px;
 }
 
-/* Header */
+/* Header (with background photo + overlay) */
 header {
   position: relative;
-  height: 400px;
+  height: 400px;              /* adjust if you want it taller */
   overflow: hidden;
   padding: 0 20px;
-  background-color: #2e2e2e; /* dark gray */
+
+  /* Put your image path here */
+  background: url("images/banner.jpg") center / cover no-repeat;
+
+  /* Layout for the text inside */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  /* Fallback color while image loads */
+  background-color: #2e2e2e;
 }
 
-.banner-text h1 {
-  font-family: "Times New Roman", serif;
-  font-size: 56px; /* big headline */
-  color: white;
-  margin: 0;
+/* A subtle dark overlay so white text stays readable */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* tweak 0.45 for lighter/darker */
 }
 
-.banner-text h2 {
-  font-family: "Times New Roman", serif;
-  font-size: 28px; /* smaller but still bigger than default */
-  color: #dcdcdc; /* slightly lighter gray so it stands out */
-  margin: 10px 0 0;
-}
-
-.header-content {
+/* Make sure the banner text sits above the overlay */
+.banner-text {
   position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 100px 20px;
-}
-
-.header-content h1,
-.header-content p {
-  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  z-index: 1;
 }
 
 /* About Section */
