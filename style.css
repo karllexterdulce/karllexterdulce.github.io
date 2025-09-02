@@ -209,6 +209,8 @@ section {
   text-decoration: underline;
 }
 
+<link rel="stylesheet" href="style.css">
+
 /* Footer */
 footer {
   text-align: center;
