@@ -18,7 +18,7 @@ body {
 /* Header (with background photo + overlay) */
 header {
   position: relative;
-  height: 400px;              /* adjust if you want it taller */
+  height: 400px; /* adjust as needed */
   overflow: hidden;
   padding: 0 20px;
 
@@ -35,23 +35,38 @@ header {
   background-color: #2e2e2e;
 }
 
-/* A subtle dark overlay so white text stays readable */
+/* Dark overlay on top of image */
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* tweak 0.45 for lighter/darker */
+  background: rgba(0, 0, 0, 0.45); /* adjust for darker/lighter */
 }
 
-/* Make sure the banner text sits above the overlay */
+/* Make sure text sits above overlay */
 .banner-text {
   position: relative;
   z-index: 1;
 }
 
+/* Banner text styles */
+.banner-text h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 56px;
+  color: white;
+  margin: 0;
+}
+
+.banner-text h2 {
+  font-family: "Times New Roman", serif;
+  font-size: 28px;
+  color: #f5f5f5; /* softer white for contrast */
+  margin: 10px 0 0;
+}
+
 /* About Section */
 .about {
-  padding: 40px 80px; /* default desktop spacing */
+  padding: 40px 80px;
 }
 
 .about p {
@@ -66,16 +81,15 @@ header::before {
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Headings default (desktop/tablet) */
 .about h1,
 .about h2 {
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Responsive: smaller text + more balanced margins on mobile */
+/* Responsive: smaller text + margins on mobile */
 @media (max-width: 600px) {
   .about {
-    padding: 30px 20px; /* top/bottom 30px, left/right 20px */
+    padding: 30px 20px;
   }
 
   .about p {
@@ -115,35 +129,30 @@ html {
 
 .top-nav a {
   font-family: Helvetica, Arial, sans-serif;
-  color: white; /* default white text */
+  color: white;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: color 0.3s ease; /* smooth color change */
+  transition: color 0.3s ease;
 }
 
-/* when navbar background is white */
 .top-nav.scrolled {
   background: white;
 }
 
 .top-nav.scrolled a {
-  color: black; /* links turn black */
+  color: black;
 }
 
 /* CV link styles */
 .cv-link {
   text-decoration: underline;
-  color: #000000; /* black so it shows up */
+  color: #000000;
   font-weight: bold;
 }
 
 .cv-link:hover {
-  color: #444444; /* dark gray on hover */
-}
-
-.cv-link:hover {
-  color: #444444; /* dark gray on hover */
+  color: #444444;
 }
 
 /* Projects Section */
