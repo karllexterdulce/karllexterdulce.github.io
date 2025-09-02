@@ -107,12 +107,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Smooth scroll when clicking nav links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Top navigation bar */
 .top-nav {
   position: fixed;
   top: 0;
@@ -150,6 +144,10 @@ html {
   text-decoration: underline;
   color: #000000; /* black so it shows up */
   font-weight: bold;
+}
+
+.cv-link:hover {
+  color: #444444; /* dark gray on hover */
 }
 
 .cv-link:hover {
