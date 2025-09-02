@@ -3,87 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karl's Portfolio</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <header>
-    <nav class="top-nav">
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects/Works</a>
-      <a href="#experience">Experience</a>
-    </nav>
-    <div class="banner-text">
-      <h1>Hi, I'm Karl</h1>
-      <h2>Welcome to my portfolio website</h2>
+  <!-- Header / Banner -->
+  <header class="banner">
+    <div class="banner-content">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Discover my work, experiences, and more!</p>
     </div>
   </header>
 
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a third-year college student majoring in English Language Studies. Ever since grade school, I’ve had a deep passion for the arts, whether it’s writing, drawing (digital or traditional), or editing photos and videos. Even though these are my creative pursuits, I am also eager to explore new horizons in other fields.
-      </p>
-      <p>
-        My strengths include brainstorming, analyzing, and collaborating with a team. I have consistently shown my leadership skills since my elementary years, and alongside these skills, I remain committed to my academics. In senior high school, I graduated with high honors, and in college, I have been a consistent President’s Lister where I maintained a GWA of 1.11 in my sophomore year.
-      </p>
-      <p>
-        These are just a glimpse of my skills and experiences. If you’d like to know more about what I’ve done so far, you can check out my full 
-        <a href="#cv" class="cv-link">Curriculum Vitae</a>.
-      </p>
-    </div>
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects/Works</a>
+    <a href="#experience">Experience</a>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="about container">
+    <h2>About Me</h2>
+    <p>Hello! I'm [Your Name], a passionate learner and aspiring professional. This is where I’ll share more about myself.</p>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="projects container">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Short Story Collection</h3>
-        <p>A collection of my original short stories.</p>
-        <a href="#">Read here</a>
-      </div>
-      <div class="project-card">
-        <h3>Digital Art Portfolio</h3>
-        <p>My digital illustrations and designs.</p>
-        <a href="#">View gallery</a>
-      </div>
-      <div class="project-card">
-        <h3>Blog Posts</h3>
-        <p>Thoughts and essays on writing and art.</p>
-        <a href="#">Visit blog</a>
-      </div>
-    </div>
+    <h2>Projects/Works</h2>
+    <p>Here are some of my projects. Coming soon!</p>
   </section>
 
-  <section id="experience" class="container">
+  <!-- Experience Section -->
+  <section id="experience" class="experience container">
     <h2>Experience</h2>
     <p>Coming soon...</p>
   </section>
 
-  <section class="contact container">
+  <!-- Contact Section -->
+  <section id="contact" class="contact container">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a></p>
-    <p>Instagram: <a href="https://instagram.com/yourprofile">yourprofile</a></p>
+    <p>You can reach me at: your.email@example.com</p>
   </section>
 
-  <script>
-  window.addEventListener("scroll", function() {
-    const nav = document.querySelector(".top-nav");
-    if (window.scrollY > 50) { 
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  });
-</script>
-
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Karl. All rights reserved.</p>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
