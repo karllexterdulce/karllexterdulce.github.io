@@ -103,6 +103,10 @@ header {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* CV link styles */
 .cv-link {
   text-decoration: underline;
