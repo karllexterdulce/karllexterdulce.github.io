@@ -58,18 +58,27 @@ header {
 }
 
 /* About Section */
-.about p {
-  font-size: 1.1em;
+.about {
+  max-width: 800px;   /* keeps text from stretching too wide */
+  margin: 0 auto;     /* centers the section */
+  padding: 20px;      /* adds spacing inside */
+  font-family: "Times New Roman", Times, serif; /* everything inside uses Times New Roman */
 }
 
+.about p {
+  font-size: 1.1em;
+  line-height: 1.6;   /* improves readability */
+}
+
+/* CV link styles */
 .cv-link {
   text-decoration: underline;
-  color: #ffffff; /* change to your theme color */
+  color: #000000; /* black so it shows up */
   font-weight: bold;
 }
 
 .cv-link:hover {
-  color: #cccccc; /* lighter gray on hover */
+  color: #444444; /* dark gray on hover */
 }
 
 /* Projects Section */
