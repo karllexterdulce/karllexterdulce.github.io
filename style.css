@@ -118,20 +118,6 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: transparent; /* blends into background */
-  padding: 15px 10px;
-  display: flex;
-  gap: 40px; /* spacing between words */
-  justify-content: center;
-  z-index: 1000;
-}
-
-/* Top navigation bar */
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   background: transparent;
   padding: 15px 10px;
   display: flex;
@@ -143,20 +129,20 @@ html {
 
 .top-nav a {
   font-family: Helvetica, Arial, sans-serif;
-  color: white; /* default: white text */
+  color: white; /* default white text */
   text-decoration: none;
   font-weight: 500;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; /* smooth color change */
 }
 
-/* when navbar has white background */
+/* when navbar background is white */
 .top-nav.scrolled {
   background: white;
 }
 
 .top-nav.scrolled a {
-  color: gray; /* links turn gray */
+  color: black; /* links turn black */
 }
 
 /* CV link styles */
