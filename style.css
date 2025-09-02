@@ -126,6 +126,20 @@ html {
   z-index: 1000;
 }
 
+/* Top navigation bar */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent; /* blends into background */
+  padding: 15px 10px;
+  display: flex;
+  gap: 40px; /* spacing between words */
+  justify-content: center;
+  z-index: 1000;
+}
+
 /* Navigation links */
 .top-nav a {
   color: white; /* white text */
