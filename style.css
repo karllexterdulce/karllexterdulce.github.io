@@ -58,16 +58,21 @@ header {
 }
 
 /* About Section */
-.about {
-  max-width: 800px;   /* keeps text from stretching too wide */
-  margin: 0 auto;     /* centers the section */
-  padding: 20px;      /* adds spacing inside */
+.about .container {
+  max-width: 800px;   /* limits width of content */
+  margin: 0 auto;     /* centers content */
+  padding: 20px;
   font-family: "Times New Roman", Times, serif; /* everything inside uses Times New Roman */
+}
+
+.about h2 {
+  font-size: 36px;   /* make the heading bigger */
+  margin-bottom: 15px;
 }
 
 .about p {
   font-size: 1.1em;
-  line-height: 1.6;   /* improves readability */
+  line-height: 1.6;
 }
 
 /* CV link styles */
