@@ -3,65 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Karl's Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav id="navbar">
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-    </ul>
+  <!-- Navigation -->
+  <nav class="top-nav">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Banner -->
-  <header class="hero" id="hero">
-    <div class="hero-content">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Coming soon on the experience...</p>
+  <!-- Header / Banner -->
+  <header>
+    <div class="header-content">
+      <div class="banner-text">
+        <h1>Karl's Portfolio</h1>
+        <h2>Creative Developer & Designer</h2>
+      </div>
     </div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="about">
-    <div class="about-container">
-      <img src="images/profile.jpg" alt="My Photo">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>
-          Hi! I'm [Your Name], a passionate learner and creator.
-          This section is where you can tell visitors more about yourself,
-          your interests, and what you do.
-        </p>
+  <section id="about" class="about container">
+    <h1>About Me</h1>
+    <p>
+      Hi, I’m Karl. I enjoy building websites, experimenting with design, 
+      and creating meaningful digital experiences.  
+      You can view my CV <a href="Karl_CV.pdf" class="cv-link" target="_blank">here</a>.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container">
+    <h1>Projects</h1>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h2>Project One</h2>
+        <p>A short description of this project goes here.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h2>Project Two</h2>
+        <p>A short description of this project goes here.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h2>Project Three</h2>
+        <p>A short description of this project goes here.</p>
+        <a href="#">View Project</a>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="experience">
-    <h2>Experience</h2>
-    <p>✨ Coming Soon ✨</p>
+  <!-- Contact Section -->
+  <section id="contact" class="contact container">
+    <h1>Contact</h1>
+    <p>
+      Feel free to reach out at 
+      <a href="mailto:karl@example.com">karl@example.com</a>
+    </p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    <p>© 2025 Karl. All Rights Reserved.</p>
   </footer>
 
+  <!-- Script to change navbar background on scroll -->
   <script>
-    // Change navbar style when scrolling
     window.addEventListener("scroll", function() {
-      const navbar = document.getElementById("navbar");
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+      const nav = document.querySelector(".top-nav");
+      nav.classList.toggle("scrolled", window.scrollY > 50);
     });
   </script>
-
 </body>
 </html>
