@@ -18,32 +18,29 @@ body {
 /* Header (with background photo + overlay) */
 header {
   position: relative;
-  height: 400px; /* adjust as needed */
+  height: 400px;
   overflow: hidden;
   padding: 0 20px;
 
-  /* Put your image path here */
   background: url("images/banner.jpg") center / cover no-repeat;
 
-  /* Layout for the text inside */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  /* Fallback color while image loads */
   background-color: #2e2e2e;
 }
 
-/* Dark overlay on top of image */
+/* Dark overlay */
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* adjust for darker/lighter */
+  background: rgba(0, 0, 0, 0.45);
 }
 
-/* Make sure text sits above overlay */
+/* Banner text above overlay */
 .banner-text {
   position: relative;
   z-index: 1;
@@ -51,7 +48,7 @@ header::before {
 
 /* Banner text styles */
 .banner-text h1 {
-  font-family: "Times New Roman", serif;
+  font-family: 'Komrile Condensed', sans-serif;
   font-size: 56px;
   color: white;
   margin: 0;
@@ -60,7 +57,7 @@ header::before {
 .banner-text h2 {
   font-family: "Times New Roman", serif;
   font-size: 28px;
-  color: #f5f5f5; /* softer white for contrast */
+  color: #f5f5f5;
   margin: 10px 0 0;
 }
 
@@ -88,7 +85,7 @@ header::before {
   color: #ffffff;
 }
 
-/* Responsive: smaller text + margins on mobile */
+/* Responsive */
 @media (max-width: 600px) {
   .about {
     padding: 30px 20px;
@@ -138,17 +135,17 @@ html {
   transition: color 0.3s ease;
 }
 
-/* Semi-transparent smoky effect on scroll */
+/* Smoky effect on scroll */
 .top-nav.scrolled {
-  background: rgba(22, 24, 25, 0.8); /* smoky off-black */
-  backdrop-filter: blur(6px); /* frosted glass effect */
+  background: rgba(22, 24, 25, 0.8);
+  backdrop-filter: blur(6px);
 }
 
 .top-nav.scrolled a {
   color: #f5f5f5;
 }
 
-/* CV link styles */
+/* CV link */
 .cv-link {
   text-decoration: underline;
   color: #ffffff;
@@ -159,7 +156,7 @@ html {
   color: #cccccc;
 }
 
-/* Projects Section */
+/* Projects */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -189,7 +186,7 @@ html {
   text-decoration: underline;
 }
 
-/* Contact Section */
+/* Contact */
 .contact a {
   color: #7faefc;
   text-decoration: none;
@@ -203,7 +200,7 @@ html {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #161819; /* Off-Black */
+  background-color: #161819;
   font-size: 0.9em;
   color: #f5f5f5;
 }
