@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  background-color: white;
+  background-color: #F2F0EF; /* off-white background */
   color: #333;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -198,7 +198,7 @@ html {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #F2F0EF; /* match the body background */
   font-size: 0.9em;
   color: #333;
 }
