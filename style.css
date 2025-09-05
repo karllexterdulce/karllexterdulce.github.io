@@ -139,7 +139,7 @@ header::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 40px 0 20px 0; /* ⬅ scootched down */
   }
 
   .about-photo img {
