@@ -104,13 +104,23 @@ header::before {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  /* Banner text smaller */
+  .banner-text h1 {
+    font-size: 32px; /* was 56px */
+  }
+
+  .banner-text h2 {
+    font-size: 18px; /* was 28px */
+  }
+
+  /* About section stacks photo + text */
   .about-container {
     flex-direction: column;
     text-align: center;
   }
 
   .about-photo img {
-    width: 60%;
+    width: 70%;
     max-width: 300px;
   }
 }
@@ -125,90 +135,3 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  background: transparent;
-  padding: 15px 10px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  z-index: 1000;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-.top-nav a {
-  font-family: Helvetica, Arial, sans-serif;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.top-nav.scrolled {
-  background: rgba(22, 24, 25, 0.8);
-  backdrop-filter: blur(6px);
-}
-
-.top-nav.scrolled a {
-  color: #f5f5f5;
-}
-
-/* CV link */
-.cv-link {
-  text-decoration: underline;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.cv-link:hover {
-  color: #cccccc;
-}
-
-/* Projects Section */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  border: 1px solid #444;
-  padding: 20px;
-  border-radius: 10px;
-  background: #1c1e1f;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.project-card a {
-  color: #7faefc;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-/* Contact Section */
-.contact a {
-  color: #7faefc;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #161819;
-  font-size: 0.9em;
-  color: #f5f5f5;
-}
