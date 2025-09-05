@@ -75,7 +75,7 @@ header::before {
 .about-photo img {
   width: 280px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 12px; /* desktop = rounded rectangle */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -113,20 +113,23 @@ header::before {
     font-size: 18px; /* was 28px */
   }
 
-  /* About section side by side on mobile */
+  /* About section stacks vertically */
   .about-container {
-    flex-direction: row;
-    text-align: left;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .about-photo img {
-    width: 45%;
-    max-width: 200px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* circle on mobile */
+    object-fit: cover;
+    margin-bottom: 20px;
   }
 
   .about-text {
-    flex: 1;
+    flex: none;
+    text-align: center; /* center-align under the circle */
   }
 }
 
