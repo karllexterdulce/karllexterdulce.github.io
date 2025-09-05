@@ -123,8 +123,8 @@ header::before {
   }
 
   .about-photo img {
-    width: 160px;
-    height: 160px;
+    width: 200px;   /* bigger circle */
+    height: 200px;  /* bigger circle */
     border-radius: 50%; /* circle on mobile */
     object-fit: cover;
     margin-bottom: 20px;
