@@ -22,28 +22,23 @@ header {
   overflow: hidden;
   padding: 0 20px;
 
-  /* Put your image path here */
   background: url("images/banner.jpg") center / cover no-repeat;
-
-  /* Layout for the text inside */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  /* Fallback color while image loads */
   background-color: #2e2e2e;
 }
 
-/* Dark overlay on top of image */
+/* Dark overlay */
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* adjust for darker/lighter */
+  background: rgba(0, 0, 0, 0.45);
 }
 
-/* Make sure text sits above overlay */
 .banner-text {
   position: relative;
   z-index: 1;
@@ -60,61 +55,72 @@ header::before {
 .banner-text h2 {
   font-family: "Times New Roman", serif;
   font-size: 28px;
-  color: #f5f5f5; /* softer white for contrast */
+  color: #f5f5f5;
   margin: 10px 0 0;
 }
 
 /* About Section */
 .about {
-  padding: 40px 80px;
+  padding: 60px 20px;
 }
 
-.about p {
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-photo img {
+  width: 280px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
   font-size: 1.1em;
   font-family: 'Times New Roman', Times, serif;
   color: #f0f0f0;
 }
 
-.about a.cv-link {
+.about-text a.cv-link {
   text-decoration: underline;
   color: #ffffff;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.about h1,
-.about h2 {
+.about-text h1,
+.about-text h2 {
   font-family: 'Times New Roman', Times, serif;
   color: #ffffff;
 }
 
-/* Responsive: smaller text + margins on mobile */
-@media (max-width: 600px) {
-  .about {
-    padding: 30px 20px;
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .about p {
-    font-size: 1em;
-  }
-
-  .about a.cv-link {
-    font-size: 1em;
-  }
-
-  .about h1 {
-    font-size: 1.5em;
-  }
-
-  .about h2 {
-    font-size: 1.2em;
+  .about-photo img {
+    width: 60%;
+    max-width: 300px;
   }
 }
 
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
+/* Navigation */
 .top-nav {
   position: fixed;
   top: 0;
@@ -138,17 +144,16 @@ html {
   transition: color 0.3s ease;
 }
 
-/* Semi-transparent smoky effect on scroll */
 .top-nav.scrolled {
-  background: rgba(22, 24, 25, 0.8); /* smoky off-black */
-  backdrop-filter: blur(6px); /* frosted glass effect */
+  background: rgba(22, 24, 25, 0.8);
+  backdrop-filter: blur(6px);
 }
 
 .top-nav.scrolled a {
   color: #f5f5f5;
 }
 
-/* CV link styles */
+/* CV link */
 .cv-link {
   text-decoration: underline;
   color: #ffffff;
@@ -203,7 +208,7 @@ html {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #161819; /* Off-Black */
+  background-color: #161819;
   font-size: 0.9em;
   color: #f5f5f5;
 }
