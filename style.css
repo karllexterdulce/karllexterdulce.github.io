@@ -87,6 +87,7 @@ header::before {
   font-size: 1.1em;
   font-family: 'Times New Roman', Times, serif;
   color: #f0f0f0;
+  text-align: left; /* keeps text left-aligned */
 }
 
 .about-text a.cv-link {
@@ -100,6 +101,7 @@ header::before {
 .about-text h2 {
   font-family: 'Times New Roman', Times, serif;
   color: #ffffff;
+  text-align: left;
 }
 
 /* Mobile Responsive */
@@ -116,7 +118,8 @@ header::before {
   /* About section stacks vertically */
   .about-container {
     flex-direction: column;
-    text-align: center;
+    align-items: center; /* keeps photo centered */
+    text-align: left;    /* text left aligned */
   }
 
   .about-photo img {
@@ -129,7 +132,9 @@ header::before {
 
   .about-text {
     flex: none;
-    text-align: center; /* center-align under the circle */
+    text-align: left; /* left-align text */
+    width: 100%;
+    max-width: 500px; /* keeps it readable */
   }
 }
 
