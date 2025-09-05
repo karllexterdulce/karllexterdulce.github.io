@@ -113,15 +113,20 @@ header::before {
     font-size: 18px; /* was 28px */
   }
 
-  /* About section stacks photo + text */
+  /* About section side by side on mobile */
   .about-container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
   }
 
   .about-photo img {
-    width: 70%;
-    max-width: 300px;
+    width: 45%;
+    max-width: 200px;
+  }
+
+  .about-text {
+    flex: 1;
   }
 }
 
@@ -136,7 +141,8 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: transparent;
+  background: rgba(22, 24, 25, 0.6); /* always slightly smokey */
+  backdrop-filter: blur(6px);        /* frosted glass effect */
   padding: 15px 10px;
   display: flex;
   gap: 40px;
@@ -154,9 +160,10 @@ html {
   transition: color 0.3s ease;
 }
 
+/* When scrolled, slightly darker */
 .top-nav.scrolled {
-  background: rgba(22, 24, 25, 0.8);
-  backdrop-filter: blur(6px);
+  background: rgba(22, 24, 25, 0.85);
+  backdrop-filter: blur(8px);
 }
 
 .top-nav.scrolled a {
