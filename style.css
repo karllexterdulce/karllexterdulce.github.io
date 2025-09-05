@@ -72,11 +72,19 @@ header::before {
   margin: 0 auto;
 }
 
+/* Photo container */
+.about-photo {
+  position: relative;
+  display: inline-block;
+}
+
 .about-photo img {
   width: 280px;
   height: auto;
   border-radius: 12px; /* desktop = rounded rectangle */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
 }
 
 .about-text {
@@ -118,23 +126,35 @@ header::before {
   /* About section stacks vertically */
   .about-container {
     flex-direction: column;
-    align-items: center; /* keeps photo centered */
-    text-align: left;    /* text left aligned */
+    align-items: center;
+    text-align: left;
+  }
+
+  /* Circle effect with black side accent */
+  .about-photo {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #161819 40%, transparent 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   .about-photo img {
-    width: 200px;   /* bigger circle */
-    height: 200px;  /* bigger circle */
-    border-radius: 50%; /* circle on mobile */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    z-index: 2;
   }
 
   .about-text {
     flex: none;
-    text-align: left; /* left-align text */
+    text-align: left;
     width: 100%;
-    max-width: 500px; /* keeps it readable */
+    max-width: 500px;
   }
 }
 
