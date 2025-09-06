@@ -6,30 +6,6 @@
   <title>Karl's Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Force equal height cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      border: 1px solid #444;
-      padding: 20px;
-      border-radius: 10px;
-      background: #1c1e1f;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* pushes link to bottom */
-      min-height: 200px; /* ensures equal height */
-    }
-
-    /* Match section spacing */
-    .contact {
-      padding: 60px 20px; /* same as about section */
-    }
-  </style>
 </head>
 <body>
 
@@ -66,26 +42,26 @@
     </div>
   </section>
 
-  <section id="projects" class="projects container" style="font-family: 'Times New Roman', Times, serif;">
-    <h2>Projects</h2>
-    <div class="projects-grid">
+  <section id="projects" class="projects container">
+    <h2 style="font-family: 'Times New Roman', Times, serif;">Projects</h2>
+    <div class="projects-grid" style="font-family: Arial, sans-serif;">
       <div class="project-card">
         <div>
-          <h3>Writing</h3>
+          <h3 style="font-weight: bold;">Writing</h3>
           <p>My written works: essays and poems.</p>
         </div>
         <a href="#">Read here</a>
       </div>
       <div class="project-card">
         <div>
-          <h3>Artwork</h3>
+          <h3 style="font-weight: bold;">Artwork</h3>
           <p>Drawings, both digital and traditional.</p>
         </div>
         <a href="#">View gallery</a>
       </div>
       <div class="project-card">
         <div>
-          <h3>Designs</h3>
+          <h3 style="font-weight: bold;">Designs</h3>
           <p>Publication materials and creative PowerPoints.</p>
         </div>
         <a href="#">Visit gallery</a>
@@ -93,7 +69,7 @@
     </div>
   </section>
 
-  <section id="contact" class="contact container">
+  <section id="contact" class="contact container" style="margin-top: 60px;">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a></p>
@@ -115,5 +91,4 @@
     <p>© 2025 Karl. All rights reserved.</p>
   </footer>
 
-</body>
-</html>
+</
