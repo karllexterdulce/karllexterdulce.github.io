@@ -1,37 +1,32 @@
 /* Global Styles */
 body {
-  background-color: #161819; /* Farrow & Ball Off-Black */
-  color: #f5f5f5; /* light text for contrast */
+  background-color: #161819;
+  color: #f5f5f5;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
 
-/* Reusable Container */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Header (with background photo + overlay) */
 header {
   position: relative;
-  height: 400px; /* adjust as needed */
+  height: 400px;
   overflow: hidden;
   padding: 0 20px;
-
   background: url("images/banner.jpg") center / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-
   background-color: #2e2e2e;
 }
 
-/* Dark overlay */
 header::before {
   content: "";
   position: absolute;
@@ -44,7 +39,6 @@ header::before {
   z-index: 1;
 }
 
-/* Banner text styles */
 .banner-text h1 {
   font-family: "Times New Roman", serif;
   font-size: 56px;
@@ -72,7 +66,6 @@ header::before {
   margin: 0 auto;
 }
 
-/* Photo container */
 .about-photo {
   position: relative;
   display: inline-block;
@@ -81,7 +74,7 @@ header::before {
 .about-photo img {
   width: 280px;
   height: auto;
-  border-radius: 12px; /* desktop = rounded rectangle */
+  border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 2;
@@ -95,7 +88,7 @@ header::before {
   font-size: 1.1em;
   font-family: 'Times New Roman', Times, serif;
   color: #f0f0f0;
-  text-align: left; /* keeps text left-aligned */
+  text-align: left;
 }
 
 .about-text a.cv-link {
@@ -114,23 +107,15 @@ header::before {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  /* Banner text smaller */
-  .banner-text h1 {
-    font-size: 32px; /* was 56px */
-  }
+  .banner-text h1 { font-size: 32px; }
+  .banner-text h2 { font-size: 18px; }
 
-  .banner-text h2 {
-    font-size: 18px; /* was 28px */
-  }
-
-  /* About section stacks vertically */
   .about-container {
     flex-direction: column;
     align-items: center;
     text-align: left;
   }
 
-  /* Circle effect with black side accent */
   .about-photo {
     width: 230px;
     height: 230px;
@@ -139,7 +124,7 @@ header::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0 20px 0; /* ⬅ scootched down */
+    margin: 40px 0 20px 0;
   }
 
   .about-photo img {
@@ -159,9 +144,7 @@ header::before {
 }
 
 /* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 /* Navigation */
 .top-nav {
@@ -169,8 +152,8 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(22, 24, 25, 0.6); /* always slightly smokey */
-  backdrop-filter: blur(6px);        /* frosted glass effect */
+  background: rgba(22, 24, 25, 0.6);
+  backdrop-filter: blur(6px);
   padding: 15px 10px;
   display: flex;
   gap: 40px;
@@ -188,26 +171,16 @@ html {
   transition: color 0.3s ease;
 }
 
-/* When scrolled, slightly darker */
 .top-nav.scrolled {
   background: rgba(22, 24, 25, 0.85);
   backdrop-filter: blur(8px);
 }
 
-.top-nav.scrolled a {
-  color: #f5f5f5;
-}
+.top-nav.scrolled a { color: #f5f5f5; }
 
 /* CV link */
-.cv-link {
-  text-decoration: underline;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.cv-link:hover {
-  color: #cccccc;
-}
+.cv-link { text-decoration: underline; color: #ffffff; font-weight: bold; }
+.cv-link:hover { color: #cccccc; }
 
 /* Projects Section */
 .projects-grid {
@@ -235,9 +208,7 @@ html {
   font-weight: 600;
 }
 
-.project-card a:hover {
-  text-decoration: underline;
-}
+.project-card a:hover { text-decoration: underline; }
 
 /* Contact Section */
 .contact a {
@@ -245,9 +216,7 @@ html {
   text-decoration: none;
 }
 
-.contact a:hover {
-  text-decoration: underline;
-}
+.contact a:hover { text-decoration: underline; }
 
 /* Footer */
 footer {
