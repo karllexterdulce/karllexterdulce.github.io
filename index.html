@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karl's Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -24,7 +23,7 @@
   <section id="about" class="about">
     <div class="about-container">
       <div class="about-photo">
-        <img src="images/karl-photo.jpg" alt="Photo of Karl">
+        <img src="images/karl-photo.jpg" alt="Portrait of Karl">
       </div>
       <div class="about-text">
         <h2>About Me</h2>
@@ -45,7 +44,6 @@
   <section id="projects" class="projects container">
     <h2 class="projects-title">Projects</h2>
     <div class="projects-grid">
-      
       <a href="#" class="project-card">
         <h3>Writing</h3>
         <p>My written works: essays and poems.</p>
@@ -60,7 +58,6 @@
         <h3>Designs</h3>
         <p>Publication materials and creative PowerPoints.</p>
       </a>
-
     </div>
   </section>
 
@@ -74,14 +71,10 @@
   </section>
 
   <script>
-  window.addEventListener("scroll", function() {
-    const nav = document.querySelector(".top-nav");
-    if (window.scrollY > 50) { 
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  });
+    window.addEventListener("scroll", function() {
+      const nav = document.querySelector(".top-nav");
+      nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
   </script>
 
   <footer>
