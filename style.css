@@ -250,21 +250,35 @@ footer {
 /* ===== Gallery Page ===== */
 .gallery-header {
   text-align: center;
-  padding: 40px 20px; /* smaller so banner isn’t too tall */
-  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px; /* enough space for title + subtitle */
+  background: url("images/banner4theartwork.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.gallery-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay so text is readable */
+}
+
+.gallery-header h1,
+.gallery-header p {
+  position: relative;
+  z-index: 1; /* make sure text is above overlay */
 }
 
 .gallery-header h1 {
   font-family: "Times New Roman", serif;
-  font-size: 56px; /* same size as "Hi Karl" */
-  margin-bottom: 10px;
+  font-size: 56px; /* same as “Hi, I’m Karl” */
+  margin: 0 0 10px 0;
   color: #ffffff;
 }
 
 .gallery-header p {
   font-family: Arial, sans-serif;
   font-size: 18px;
-  color: #cccccc;
+  color: #dddddd;
   margin: 0;
 }
 
