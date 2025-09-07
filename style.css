@@ -313,6 +313,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 15px;
+  margin-top: 40px; /* ⬅️ add this space between subtitle and artworks */
 }
 
 .gallery-grid a {
