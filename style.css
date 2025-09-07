@@ -1,274 +1,11 @@
-/* Global Styles */
-body {
-  background-color: #161819;
-  color: #f5f5f5;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Header (Home) */
-header {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-  padding: 0 20px;
-  background: url("images/banner.jpg") center / cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #2e2e2e;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-}
-
-.banner-text {
-  position: relative;
-  z-index: 1;
-}
-
-.banner-text h1 {
-  font-family: "Times New Roman", serif;
-  font-size: 56px;
-  color: white;
-  margin: 0;
-}
-
-.banner-text h2 {
-  font-family: "Times New Roman", serif;
-  font-size: 28px;
-  color: #f5f5f5;
-  margin: 10px 0 0;
-}
-
-/* About Section */
-.about {
-  padding: 60px 20px;
-}
-
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about-photo {
-  position: relative;
-  display: inline-block;
-}
-
-.about-photo img {
-  width: 280px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 2;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text p {
-  font-size: 1.1em;
-  font-family: 'Times New Roman', Times, serif;
-  color: #f0f0f0;
-  text-align: left;
-}
-
-.about-text a.cv-link {
-  text-decoration: underline;
-  color: #ffffff;
-  font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.about-text h1,
-.about-text h2 {
-  font-family: 'Times New Roman', Times, serif;
-  color: #ffffff;
-  text-align: left;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .banner-text h1 {
-    font-size: 32px;
-  }
-
-  .banner-text h2 {
-    font-size: 18px;
-  }
-
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-  }
-
-  .about-photo {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    background: linear-gradient(to right, #161819 40%, transparent 40%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0 20px 0;
-  }
-
-  .about-photo img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    z-index: 2;
-  }
-
-  .about-text {
-    flex: none;
-    text-align: left;
-    width: 100%;
-    max-width: 500px;
-  }
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Navigation */
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(22, 24, 25, 0.6);
-  backdrop-filter: blur(6px);
-  padding: 15px 10px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  z-index: 1000;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-.top-nav a {
-  font-family: Helvetica, Arial, sans-serif;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.top-nav.scrolled {
-  background: rgba(22, 24, 25, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.top-nav.scrolled a {
-  color: #f5f5f5;
-}
-
-/* CV link */
-.cv-link {
-  text-decoration: underline;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.cv-link:hover {
-  color: #cccccc;
-}
-
-/* Projects Section */
-.projects-title {
-  font-family: 'Times New Roman', Times, serif;
-  margin-bottom: 20px;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.project-card {
-  border: 1px solid #444;
-  padding: 20px;
-  border-radius: 10px;
-  background: #1c1e1f;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.project-card h3 {
-  font-weight: bold;
-}
-
-/* Contact Section */
-#contact {
-  margin-top: 80px;
-}
-
-.contact-title {
-  font-family: 'Times New Roman', Times, serif;
-  margin-bottom: 15px;
-}
-
-.contact-details {
-  font-family: Arial, sans-serif;
-}
-
-.contact a {
-  color: #7faefc;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #161819;
-  font-size: 0.9em;
-  color: #f5f5f5;
-}
-
 /* ===== Gallery Page ===== */
 .gallery-header {
   text-align: center;
-  padding: 40px 20px; /* enough space for title + subtitle */
+  height: 250px; /* smaller than homepage banner (400px) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: url("images/banner4theartwork.jpg") center/cover no-repeat;
   position: relative;
 }
@@ -277,27 +14,26 @@ footer {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay so text is readable */
+  background: rgba(0, 0, 0, 0.45); /* overlay for readability */
 }
 
 .gallery-header h1,
 .gallery-header p {
   position: relative;
-  z-index: 1; /* make sure text is above overlay */
+  z-index: 1;
+  margin: 5px 0; /* tighter spacing */
 }
 
 .gallery-header h1 {
   font-family: "Times New Roman", serif;
-  font-size: 56px; /* same as “Hi, I’m Karl” */
-  margin: 0 0 10px 0;
+  font-size: 42px; /* smaller than homepage title */
   color: #ffffff;
 }
 
 .gallery-header p {
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #dddddd;
-  margin: 0;
 }
 
 .gallery-container {
