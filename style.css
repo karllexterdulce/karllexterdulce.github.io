@@ -14,6 +14,7 @@ body {
   padding: 0 20px;
 }
 
+/* Header (Home) */
 header {
   position: relative;
   height: 400px;
@@ -246,16 +247,16 @@ footer {
   color: #f5f5f5;
 }
 
-/* Gallery Page */
+/* ===== Gallery Page ===== */
 .gallery-header {
   text-align: center;
-  padding: 60px 20px; /* smaller, just enough space */
+  padding: 60px 20px; /* smaller than before */
   background: rgba(0, 0, 0, 0.6);
 }
 
 .gallery-header h1 {
   font-family: "Times New Roman", serif;
-  font-size: 56px; /* same as 'Hi Karl' */
+  font-size: 56px; /* same as "Hi, I'm Karl" */
   margin-bottom: 10px;
   color: #ffffff;
 }
