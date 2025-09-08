@@ -231,19 +231,19 @@ html {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Specific hover colors per card */
-.project-card.artworks:hover {
-  background-color: #f9c784; /* pastel beige/orange */
-  color: #111; /* dark text */
-}
-
-.project-card.writing:hover {
-  background-color: #fdfdf4; /* eggshell white */
+/* Specific hover colors based on order */
+.projects-grid .project-card:nth-of-type(1):hover {
+  background-color: #fdfdf4; /* eggshell white for Writing */
   color: #111;
 }
 
-.project-card.designs:hover {
-  background-color: #a7c7e7; /* pastel blue */
+.projects-grid .project-card:nth-of-type(2):hover {
+  background-color: #f5f5f5; /* light neutral for Artwork */
+  color: #111;
+}
+
+.projects-grid .project-card:nth-of-type(3):hover {
+  background-color: #a7c7e7; /* pastel blue for Designs */
   color: #111;
 }
 
