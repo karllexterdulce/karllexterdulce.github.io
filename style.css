@@ -212,6 +212,26 @@ html {
   font-family: Arial, sans-serif;
 }
 
+/* ===== CV Section ===== */
+.cv {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.cv-title {
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.cv-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
 /* Base card style */
 .project-card {
   position: relative;
