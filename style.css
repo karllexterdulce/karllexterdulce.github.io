@@ -376,20 +376,23 @@ footer {
   max-width: 900px;
   margin: 60px auto;
   padding: 20px;
-  text-align: center;
 }
 
-.cv-container img {
-  display: block;
-  max-width: 100%;
+.cv-grid {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 30px; /* spacing between pages */
+}
+
+.cv-grid img {
+  width: 100%;
   height: auto;
-  margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: opacity 0.4s ease;
 }
 
-.cv-container img:hover {
+.cv-grid img:hover {
   opacity: 0.9;
 }
 
