@@ -212,6 +212,71 @@ html {
   font-family: Arial, sans-serif;
 }
 
+/* Base card style */
+.project-card {
+  position: relative;
+  border: 1px solid #444;
+  padding: 20px;
+  border-radius: 10px;
+  background: #222;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  overflow: hidden; /* so image doesn’t spill out */
+}
+
+/* Add background image layer (invisible by default) */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease; /* smooth fade */
+  z-index: 0; /* sits behind text */
+}
+
+/* Keep text above background */
+.project-card h3,
+.project-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover lift */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: #fff; /* default text color */
+}
+
+/* Writing hover background */
+.projects-grid .project-card:nth-of-type(1)::before {
+  background-image: url("images/banner4writing.jpg");
+}
+.projects-grid .project-card:nth-of-type(1):hover::before {
+  opacity: 1;
+}
+
+/* Artwork hover background */
+.projects-grid .project-card:nth-of-type(2)::before {
+  background-image: url("images/banner4artwork.jpg");
+}
+.projects-grid .project-card:nth-of-type(2):hover::before {
+  opacity: 1;
+}
+
+/* Designs hover background */
+.projects-grid .project-card:nth-of-type(3)::before {
+  background-image: url("images/banner4designs.jpg");
+}
+.projects-grid .project-card:nth-of-type(3):hover::before {
+  opacity: 1;
+}
+
 /* General project card style */
 .project-card {
   border: 1px solid #444;
