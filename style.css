@@ -334,3 +334,24 @@ footer {
   object-fit: cover;
   display: block;
 }
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  z-index: 1100; /* stays above the banner */
+}
+
+.back-button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
