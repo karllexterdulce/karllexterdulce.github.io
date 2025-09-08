@@ -371,6 +371,46 @@ footer {
   color: #f5f5f5;
 }
 
+/* === CV Page Styles === */
+.cv-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.cv-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.back-button {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: #eaeaea;
+}
+
+.cv-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.cv-container img {
+  max-width: 90%;
+  height: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
 /* ===== Gallery Page ===== */
 .gallery-header {
   text-align: center;
