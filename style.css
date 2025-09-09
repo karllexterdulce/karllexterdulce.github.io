@@ -281,18 +281,23 @@ footer {
 }
 
 .cv-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;      /* Space between pages */
-  flex-wrap: nowrap; /* Prevent wrapping so they stay side by side */
+  display: flex;           /* side by side */
+  justify-content: center; /* center horizontally */
+  gap: 20px;               /* space between pages */
+  flex-wrap: wrap;         /* stack if screen too small */
 }
 
-.cv-grid img {
-  width: 45%;     /* Two in a row */
+.cv-page img {
+  width: 100%;             /* full width of the cv-page container */
+  max-width: 400px;        /* optional: limit max size */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, opacity 0.4s ease;
+}
+
+.cv-page a {
+  display: block;
 }
 
 .cv-grid img:hover {
