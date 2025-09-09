@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
+  <!-- Header / Banner -->
   <header id="top">
     <nav class="top-nav">
       <a href="#top">Home</a>
       <a href="#projects">Projects/Works</a>
-      <a href="#cv">Curriculum Vitae</a>
       <a href="#contact">Contacts</a>
+      <a href="cv.html">Curriculum Vitae</a>
     </nav>
     <div class="banner-text">
       <h1>Hi, I'm Karl</h1>
@@ -20,7 +21,8 @@
     </div>
   </header>
 
-  <section id="about" class="about">
+  <!-- About Section -->
+  <section id="about" class="about container">
     <div class="about-container">
       <div class="about-photo">
         <img src="images/karl-photo.jpg" alt="Portrait of Karl">
@@ -34,12 +36,13 @@
           My strengths include brainstorming, analyzing, and collaborating with a team. I have consistently shown my leadership skills since my elementary years, and alongside these skills, I remain committed to my academics. In senior high school, I graduated with high honors, and in college, I have been a consistent President’s Lister where I maintained a GWA of 1.11 in my sophomore year.
         </p>
         <p>
-          These are just a glimpse of my skills and experiences. If you’d like to know more about what I’ve done so far, you can check out my full Curriculum Vitae below.
+          To see my full experiences and achievements, you can check out my <a href="cv.html" class="cv-link">Curriculum Vitae</a>.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="projects container">
     <h2 class="projects-title">Projects</h2>
     <div class="projects-grid">
@@ -58,37 +61,7 @@
     </div>
   </section>
 
-  <!-- Curriculum Vitae Section -->
-  <section id="cv" class="cv container">
-  <h2 class="cv-title">Curriculum Vitae</h2>
-  <div class="cv-images">
-    <img src="images/cv-page1.jpg" alt="Curriculum Vitae Page 1">
-    <img src="images/cv-page2.jpg" alt="Curriculum Vitae Page 2">
-  </div>
-</section>
-
-<style>
-  .cv {
-    text-align: center;
-    margin: 50px auto;
-  }
-
-  .cv-images {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* spacing between the pages */
-    margin-top: 20px;
-    flex-wrap: wrap; /* so they stack on small screens */
-  }
-
-  .cv-images img {
-    width: 45%; /* each image takes less than half the row */
-    max-width: 400px; /* keeps them from being too large */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-</style>
-
+  <!-- Contact Section -->
   <section id="contact" class="contact container">
     <h2 class="contact-title">Contact</h2>
     <div class="contact-details">
@@ -97,6 +70,7 @@
     </div>
   </section>
 
+  <!-- Scroll Script -->
   <script>
     window.addEventListener("scroll", function() {
       const nav = document.querySelector(".top-nav");
@@ -104,6 +78,7 @@
     });
   </script>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Karl. All rights reserved.</p>
   </footer>
