@@ -60,16 +60,34 @@
 
   <!-- Curriculum Vitae Section -->
   <section id="cv" class="cv container">
-    <h2 class="cv-title">Curriculum Vitae</h2>
-    <div class="cv-grid">
-      <a href="images/cv-page1.jpg" target="_blank">
-        <img src="images/cv-page1.jpg" alt="Curriculum Vitae Page 1">
-      </a>
-      <a href="images/cv-page2.jpg" target="_blank">
-        <img src="images/cv-page2.jpg" alt="Curriculum Vitae Page 2">
-      </a>
-    </div>
-  </section>
+  <h2 class="cv-title">Curriculum Vitae</h2>
+  <div class="cv-images">
+    <img src="images/cv-page1.jpg" alt="Curriculum Vitae Page 1">
+    <img src="images/cv-page2.jpg" alt="Curriculum Vitae Page 2">
+  </div>
+</section>
+
+<style>
+  .cv {
+    text-align: center;
+    margin: 50px auto;
+  }
+
+  .cv-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* spacing between the pages */
+    margin-top: 20px;
+    flex-wrap: wrap; /* so they stack on small screens */
+  }
+
+  .cv-images img {
+    width: 45%; /* each image takes less than half the row */
+    max-width: 400px; /* keeps them from being too large */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+</style>
 
   <section id="contact" class="contact container">
     <h2 class="contact-title">Contact</h2>
