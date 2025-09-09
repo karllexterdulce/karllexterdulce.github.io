@@ -271,6 +271,7 @@ footer {
   padding: 0;        /* remove padding */
   margin: 0;         /* remove margin */
   text-align: center;
+  overflow: hidden;  /* prevents extra scrollbars on hover */
 }
 
 .cv-title {
@@ -283,17 +284,22 @@ footer {
 .cv-grid {
   display: flex;     
   justify-content: center; 
-  gap: 20px;         /* space between pages */
-  flex-wrap: nowrap;  /* prevent stacking */
-  margin: 0;          /* remove grid margins */
-  padding: 0;         /* remove grid padding */
-  overflow-x: auto;   /* horizontal scroll if needed */
+  gap: 20px;          /* space between pages */
+  flex-wrap: nowrap;   /* prevent stacking */
+  margin: 0;           /* remove grid margins */
+  padding: 0;          /* remove grid padding */
+  overflow-x: auto;    /* horizontal scroll only when needed */
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+}
+
+.cv-grid::-webkit-scrollbar {
+  display: none;       /* hide scrollbar in Chrome, Safari, Edge */
 }
 
 .cv-page {
-  flex: 0 0 auto;     /* fixed size, don't grow/shrink */
-  width: 45vw;        /* each page ~45% of viewport width */
-  margin: 0;          /* no margins */
+  flex: 0 0 auto;      /* fixed size, don't grow/shrink */
+  width: 45vw;         /* each page ~45% of viewport width */
+  margin: 0;           /* no margins */
 }
 
 .cv-page img {
