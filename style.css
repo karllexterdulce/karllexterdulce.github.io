@@ -305,6 +305,41 @@ footer {
   opacity: 0.9;
 }
 
+/* Lightbox Overlay */
+.cv-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+.cv-lightbox .lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.cv-lightbox .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2100;
+  transition: color 0.3s ease;
+}
+
+.cv-lightbox .close-btn:hover {
+  color: #ccc;
+}
+
 /* ===== Back Button ===== */
 .back-button {
   position: absolute;
