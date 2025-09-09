@@ -294,20 +294,26 @@ footer {
 
 .cv-grid {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px; /* space between pages */
+  flex-wrap: wrap; /* responsive on smaller screens */
+}
+
+.cv-grid a {
+  display: block;
+  cursor: pointer;
 }
 
 .cv-grid img {
-  width: 45%;
+  width: 45%; /* two in a row */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: opacity 0.4s ease;
+  transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
 .cv-grid img:hover {
+  transform: scale(1.05);
   opacity: 0.9;
 }
 
