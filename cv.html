@@ -138,16 +138,20 @@ const lightboxImg = document.querySelector('.lightbox-img');
 const closeBtn = document.querySelector('.close-btn');
 const cvPages = document.querySelectorAll('.cv-grid a img');
 
+// Open lightbox
 cvPages.forEach((img, index) => {
   img.parentElement.addEventListener('click', (e) => {
     e.preventDefault();
     lightboxImg.src = cvPages[index].src;
     lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // disable body scroll
   });
 });
 
+// Close lightbox
 closeBtn.addEventListener('click', () => {
   lightbox.style.display = 'none';
+  document.body.style.overflow = 'auto'; // re-enable body scroll
 });
 </script>
 
