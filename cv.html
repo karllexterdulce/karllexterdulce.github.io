@@ -8,40 +8,45 @@
 <style>
 /* ===== CV Section ===== */
 .cv-container {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 20px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
 .cv-title {
   font-family: 'Times New Roman', Times, serif;
-  margin-bottom: 20px;
   font-size: 28px;
   color: #fff;
+  margin: 20px 0; /* only vertical spacing */
 }
 
 .cv-grid {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 20px;        /* space between pages */
+  flex-wrap: nowrap; /* no wrapping */
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;  /* horizontal scroll if screen too small */
 }
 
-.cv-grid a {
-  display: block;
-  cursor: pointer;
+.cv-page {
+  flex: 0 0 auto;   /* fixed width, don't grow/shrink */
+  width: 45vw;      /* each page ~45% of viewport width */
+  margin: 0;        /* no margin */
 }
 
-.cv-grid img {
-  width: 45%;
+.cv-page img {
+  width: 100%;
   height: auto;
+  display: block;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
-.cv-grid img:hover {
+.cv-page img:hover {
   transform: scale(1.05);
   opacity: 0.9;
 }
@@ -52,15 +57,17 @@
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.95);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   z-index: 2000;
+  overflow-y: auto;
+  padding: 40px 0;
 }
 
 .cv-lightbox img {
   max-width: 90%;
-  max-height: 80%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   margin-bottom: 20px;
@@ -68,8 +75,6 @@
 
 /* Buttons */
 .cv-lightbox .close-btn,
-.cv-lightbox .prev-btn,
-.cv-lightbox .next-btn,
 .back-button {
   position: absolute;
   background: rgba(0,0,0,0.6);
@@ -85,8 +90,6 @@
 }
 
 .cv-lightbox .close-btn:hover,
-.cv-lightbox .prev-btn:hover,
-.cv-lightbox .next-btn:hover,
 .back-button:hover {
   background: rgba(0,0,0,0.8);
 }
@@ -99,16 +102,6 @@
 .cv-lightbox .close-btn {
   top: 20px;
   right: 20px;
-}
-
-.cv-lightbox .prev-btn {
-  left: 20px;
-  bottom: 20px;
-}
-
-.cv-lightbox .next-btn {
-  right: 20px;
-  bottom: 20px;
 }
 </style>
 </head>
@@ -137,61 +130,24 @@
 <div class="cv-lightbox">
   <span class="close-btn">✕</span>
   <img src="" alt="CV Full Page" class="lightbox-img">
-  <span class="prev-btn">Previous Page</span>
-  <span class="next-btn">Next Page</span>
 </div>
 
 <script>
 const lightbox = document.querySelector('.cv-lightbox');
 const lightboxImg = document.querySelector('.lightbox-img');
 const closeBtn = document.querySelector('.close-btn');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
 const cvPages = document.querySelectorAll('.cv-grid a img');
 
-let currentPage = 0;
-
-function showLightbox(pageIndex) {
-  currentPage = pageIndex;
-  lightboxImg.src = cvPages[currentPage].src;
-  lightbox.style.display = 'flex';
-  updateButtons();
-}
-
-function updateButtons() {
-  prevBtn.style.display = currentPage === 0 ? 'none' : 'block';
-  nextBtn.style.display = currentPage === cvPages.length - 1 ? 'none' : 'block';
-}
-
-// Click on grid images
 cvPages.forEach((img, index) => {
   img.parentElement.addEventListener('click', (e) => {
     e.preventDefault();
-    showLightbox(index);
+    lightboxImg.src = cvPages[index].src;
+    lightbox.style.display = 'flex';
   });
 });
 
-// Close lightbox
 closeBtn.addEventListener('click', () => {
   lightbox.style.display = 'none';
-});
-
-// Previous page
-prevBtn.addEventListener('click', () => {
-  if (currentPage > 0) {
-    currentPage--;
-    lightboxImg.src = cvPages[currentPage].src;
-    updateButtons();
-  }
-});
-
-// Next page
-nextBtn.addEventListener('click', () => {
-  if (currentPage < cvPages.length - 1) {
-    currentPage++;
-    lightboxImg.src = cvPages[currentPage].src;
-    updateButtons();
-  }
 });
 </script>
 
