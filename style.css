@@ -288,8 +288,8 @@ footer {
 }
 
 .cv-page img {
-  width: 100%;             /* full width of the cv-page container */
-  max-width: 400px;        /* optional: limit max size */
+  width: 100%;          /* full width of container */
+  max-width: 45vw;      /* takes up ~45% of screen width */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
