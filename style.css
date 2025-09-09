@@ -295,10 +295,12 @@ footer {
 }
 
 .cv-page img {
-  width: 100%;           /* fills the cv-page div */
+  width: 100%;          /* full width of container */
+  max-width: 45vw;      /* takes up ~60% of screen width */
   height: auto;
-  display: block;
   border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
 .cv-page a {
