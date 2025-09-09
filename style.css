@@ -266,11 +266,10 @@ footer {
 }
 
 /* ===== CV Section ===== */
-/* ===== CV Section ===== */
 .cv-container {
-  max-width: none;       /* allow pages to grow freely */
+  max-width: none;       /* no width limit */
   margin: 20px auto;
-  padding: 20px;
+  padding: 0;
   text-align: center;
 }
 
@@ -282,19 +281,21 @@ footer {
 }
 
 .cv-grid {
-  display: block;        /* stack vertically */
-  gap: 40px;
+  display: flex;         /* side by side */
+  justify-content: center; /* center horizontally */
+  gap: 20px;             /* space between pages */
+  flex-wrap: nowrap;      /* don't wrap to next line */
 }
 
 .cv-page {
-  width: 90vw;           /* page takes 90% of screen width */
-  max-width: none;       /* remove any max-width constraint */
-  margin: 0 auto;        /* center horizontally */
+  width: 45vw;           /* each page ~45% of viewport width */
+  height: auto;
+  margin: 0;
 }
 
 .cv-page img {
-  width: 100%;           /* image fills container */
-  height: auto;          /* maintain aspect ratio */
+  width: 100%;
+  height: auto;
   display: block;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
