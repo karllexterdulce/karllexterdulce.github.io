@@ -267,36 +267,38 @@ footer {
 
 /* ===== CV Section ===== */
 .cv-container {
-  max-width: 900px;
-  margin: 60px auto;
+  max-width: 1000px; /* wider so pages fit nicely */
+  margin: 20px auto;
   padding: 20px;
   text-align: center;
 }
 
 .cv-title {
   font-family: 'Times New Roman', Times, serif;
-  margin-bottom: 20px;
   font-size: 28px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
 .cv-grid {
-  display: flex;
+  display: flex;         /* side by side */
   justify-content: center;
-  gap: 20px;
-  flex-wrap: nowrap; /* stay side by side */
+  gap: 20px;             /* space between pages */
+  align-items: flex-start;
 }
 
 .cv-page {
-  flex: 0 0 45%; /* each page takes ~45% of the container width */
+  width: 48%;            /* each page ~48% of container */
+  height: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border-radius: 10px;
 }
 
 .cv-page img {
-  width: 100%; /* fills the cv-page container */
+  width: 100%;           /* fills the cv-page div */
   height: auto;
+  display: block;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
 .cv-page a {
