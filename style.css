@@ -281,23 +281,21 @@ footer {
 }
 
 .cv-grid {
-  display: flex;         /* side by side */
+  display: flex;
   justify-content: center;
-  gap: 20px;             /* space between pages */
+  gap: 20px;
   align-items: flex-start;
+  flex-wrap: nowrap; /* keep pages side by side */
 }
 
 .cv-page {
-  width: 48%;            /* each page ~48% of container */
-  height: auto;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  border-radius: 10px;
+  flex: 0 0 auto; /* let page width fit image naturally */
+  max-width: 45vw; /* page takes up ~45% of viewport width */
 }
 
 .cv-page img {
-  width: 100%;          /* full width of container */
-  max-width: 45vw;      /* takes up ~60% of screen width */
-  height: auto;
+  width: 100%;  /* fills the cv-page container */
+  height: auto; /* maintain vertical aspect ratio */
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, opacity 0.4s ease;
