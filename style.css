@@ -284,17 +284,15 @@ footer {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: nowrap; /* prevent wrapping so they stay side by side */
+  flex-wrap: nowrap; /* stay side by side */
 }
 
 .cv-page {
-  flex: 1 1 45%; /* allow each page to grow/shrink, ~45% width each */
-  max-width: 45vw; /* ensure it doesn’t get too big */
+  flex: 0 0 45%; /* each page takes ~45% of the container width */
 }
 
 .cv-page img {
-  width: 100%;          /* full width of container */
-  max-width: 45vw;      /* takes up ~45% of screen width */
+  width: 100%; /* fills the cv-page container */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
