@@ -267,9 +267,9 @@ footer {
 
 /* ===== CV Section ===== */
 .cv-container {
-  max-width: none;       /* no width limit */
-  margin: 20px auto;
-  padding: 0;
+  width: 100%;       /* full screen */
+  padding: 0;        /* remove padding */
+  margin: 0;         /* remove margin */
   text-align: center;
 }
 
@@ -277,20 +277,23 @@ footer {
   font-family: 'Times New Roman', Times, serif;
   font-size: 28px;
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* only vertical spacing */
 }
 
 .cv-grid {
-  display: flex;         /* side by side */
-  justify-content: center; /* center horizontally */
-  gap: 20px;             /* space between pages */
-  flex-wrap: nowrap;      /* don't wrap to next line */
+  display: flex;     
+  justify-content: center; 
+  gap: 20px;         /* space between pages */
+  flex-wrap: nowrap;  /* prevent stacking */
+  margin: 0;          /* remove grid margins */
+  padding: 0;         /* remove grid padding */
+  overflow-x: auto;   /* horizontal scroll if needed */
 }
 
 .cv-page {
-  width: 45vw;           /* each page ~45% of viewport width */
-  height: auto;
-  margin: 0;
+  flex: 0 0 auto;     /* fixed size, don't grow/shrink */
+  width: 45vw;        /* each page ~45% of viewport width */
+  margin: 0;          /* no margins */
 }
 
 .cv-page img {
@@ -299,11 +302,6 @@ footer {
   display: block;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, opacity 0.4s ease;
-}
-
-.cv-page a {
-  display: block;
 }
 
 .cv-page img:hover {
