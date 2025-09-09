@@ -311,6 +311,35 @@ footer {
   opacity: 0.9;
 }
 
+/* ===== CV Full-Screen Sliding Pages ===== */
+.cv-slider {
+  scroll-snap-type: y mandatory; /* snap each page when scrolling */
+  overflow-y: scroll;
+  height: 100vh; /* full viewport height */
+}
+
+.cv-page {
+  scroll-snap-align: start;
+  height: 100vh; /* each page takes full screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161819;
+}
+
+.cv-page img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain; /* keeps aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Smooth scroll for nicer feel */
+.cv-slider {
+  scroll-behavior: smooth;
+}
+
 /* Back Button */
 .back-button {
   position: absolute;
