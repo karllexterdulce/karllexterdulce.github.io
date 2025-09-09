@@ -305,18 +305,23 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
+  background: rgba(0,0,0,0.95);
+  justify-content: flex-start; /* start from top for scrolling */
   align-items: center;
+  flex-direction: column;
   z-index: 2000;
-  cursor: zoom-out;
+  overflow-y: auto;           /* allow scrolling for tall images */
+  padding: 40px 0;
 }
 
-.cv-lightbox .lightbox-img {
+.cv-lightbox img {
   max-width: 90%;
-  max-height: 90%;
+  min-width: 700px;          /* bigger width for clarity */
+  width: auto;
+  height: auto;              /* allow full height, scrollable */
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
 }
 
 .cv-lightbox .close-btn {
