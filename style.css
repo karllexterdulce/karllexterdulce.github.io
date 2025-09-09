@@ -1,4 +1,4 @@
-/* Global Styles */
+/* ===== Global Styles ===== */
 body {
   background-color: #161819;
   color: #f5f5f5;
@@ -14,7 +14,11 @@ body {
   padding: 0 20px;
 }
 
-/* Header (Home) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Header ===== */
 header {
   position: relative;
   height: 400px;
@@ -54,7 +58,7 @@ header::before {
   margin: 10px 0 0;
 }
 
-/* About Section */
+/* ===== About Section ===== */
 .about {
   padding: 60px 20px;
 }
@@ -67,18 +71,11 @@ header::before {
   margin: 0 auto;
 }
 
-.about-photo {
-  position: relative;
-  display: inline-block;
-}
-
 .about-photo img {
   width: 280px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 2;
 }
 
 .about-text {
@@ -106,7 +103,7 @@ header::before {
   text-align: left;
 }
 
-/* Mobile Responsive */
+/* ===== Mobile ===== */
 @media (max-width: 768px) {
   .banner-text h1 { font-size: 32px; }
   .banner-text h2 { font-size: 18px; }
@@ -119,7 +116,6 @@ header::before {
     width: 230px;
     height: 230px;
     border-radius: 50%;
-    background: linear-gradient(to right, #161819 40%, transparent 40%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,22 +126,15 @@ header::before {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    z-index: 2;
   }
   .about-text {
     flex: none;
-    text-align: left;
     width: 100%;
     max-width: 500px;
   }
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Navigation */
+/* ===== Navigation ===== */
 .top-nav {
   position: fixed;
   top: 0;
@@ -179,7 +168,7 @@ html {
   color: #f5f5f5;
 }
 
-/* Projects Section */
+/* ===== Projects Section ===== */
 .projects-title {
   font-family: 'Times New Roman', Times, serif;
   margin-bottom: 20px;
@@ -226,7 +215,6 @@ html {
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  color: #fff;
 }
 
 .projects-grid .project-card:nth-of-type(1)::before {
@@ -245,7 +233,7 @@ html {
   opacity: 1;
 }
 
-/* Contact Section */
+/* ===== Contact ===== */
 #contact {
   margin-top: 80px;
 }
@@ -268,7 +256,7 @@ html {
   text-decoration: underline;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 20px;
@@ -277,7 +265,7 @@ footer {
   color: #f5f5f5;
 }
 
-/* ===== CV Page Styles ===== */
+/* ===== CV Section ===== */
 .cv-container {
   max-width: 900px;
   margin: 60px auto;
@@ -295,8 +283,8 @@ footer {
 .cv-grid {
   display: flex;
   justify-content: center;
-  gap: 20px; /* space between pages */
-  flex-wrap: wrap; /* responsive on smaller screens */
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .cv-grid a {
@@ -305,7 +293,7 @@ footer {
 }
 
 .cv-grid img {
-  width: 45%; /* two in a row */
+  width: 45%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -317,36 +305,7 @@ footer {
   opacity: 0.9;
 }
 
-/* ===== CV Full-Screen Sliding Pages ===== */
-.cv-slider {
-  scroll-snap-type: y mandatory; /* snap each page when scrolling */
-  overflow-y: scroll;
-  height: 100vh; /* full viewport height */
-}
-
-.cv-page {
-  scroll-snap-align: start;
-  height: 100vh; /* each page takes full screen */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #161819;
-}
-
-.cv-page img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain; /* keeps aspect ratio */
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* Smooth scroll for nicer feel */
-.cv-slider {
-  scroll-behavior: smooth;
-}
-
-/* Back Button */
+/* ===== Back Button ===== */
 .back-button {
   position: absolute;
   top: 20px;
