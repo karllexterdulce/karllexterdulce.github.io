@@ -281,21 +281,18 @@ footer {
 }
 
 .cv-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
-  flex-wrap: nowrap; /* keep pages side by side */
+  display: block;   /* stack pages vertically */
+  gap: 40px;        /* space between pages */
 }
 
 .cv-page {
-  flex: 0 0 auto; /* let page width fit image naturally */
-  max-width: 45vw; /* page takes up ~60% of viewport width */
+  width: 60vw;      /* bigger pages */
+  margin: 0 auto;   /* center horizontally */
 }
 
 .cv-page img {
-  width: 100%;  /* fills the cv-page container */
-  height: auto; /* maintain vertical aspect ratio */
+  width: 100%;       /* fills the cv-page container */
+  height: auto;      /* maintain vertical aspect ratio */
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, opacity 0.4s ease;
@@ -305,7 +302,7 @@ footer {
   display: block;
 }
 
-.cv-grid img:hover {
+.cv-page img:hover {
   transform: scale(1.05);
   opacity: 0.9;
 }
