@@ -281,10 +281,15 @@ footer {
 }
 
 .cv-grid {
-  display: flex;           /* side by side */
-  justify-content: center; /* center horizontally */
-  gap: 20px;               /* space between pages */
-  flex-wrap: wrap;         /* stack if screen too small */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap; /* prevent wrapping so they stay side by side */
+}
+
+.cv-page {
+  flex: 1 1 45%; /* allow each page to grow/shrink, ~45% width each */
+  max-width: 45vw; /* ensure it doesn’t get too big */
 }
 
 .cv-page img {
