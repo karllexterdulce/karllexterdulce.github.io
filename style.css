@@ -290,7 +290,7 @@ footer {
 
 .cv-page {
   flex: 0 0 auto; /* let page width fit image naturally */
-  max-width: 45vw; /* page takes up ~45% of viewport width */
+  max-width: 45vw; /* page takes up ~60% of viewport width */
 }
 
 .cv-page img {
