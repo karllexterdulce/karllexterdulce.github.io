@@ -286,8 +286,9 @@ footer {
 }
 
 .cv-page {
-  width: 80vw;   /* bigger page, ~80% of screen width */
-  margin: 0 auto;   /* center horizontally */
+  width: 80vw;
+  max-width: 1000px; /* won’t get bigger than this */
+  margin: 0 auto;
 }
 
 .cv-page img {
