@@ -283,17 +283,12 @@ footer {
 .cv-grid {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.cv-grid a {
-  display: block;
-  cursor: pointer;
+  gap: 20px;      /* Space between pages */
+  flex-wrap: nowrap; /* Prevent wrapping so they stay side by side */
 }
 
 .cv-grid img {
-  width: 45%;
+  width: 45%;     /* Two in a row */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
