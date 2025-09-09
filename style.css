@@ -286,17 +286,14 @@ footer {
 }
 
 .cv-page {
-  width: 80vw;
-  max-width: 1000px; /* won’t get bigger than this */
-  margin: 0 auto;
+  width: 80vw;        /* bigger width relative to screen */
+  max-width: none;    /* remove any max-width constraints */
+  margin: 0 auto;     /* keep it centered */
 }
 
 .cv-page img {
-  width: 100%;       /* fills the cv-page container */
+  width: 100%;       /* fills the .cv-page div */
   height: auto;      /* maintain vertical aspect ratio */
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, opacity 0.4s ease;
 }
 
 .cv-page a {
