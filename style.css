@@ -339,15 +339,16 @@ footer {
   margin-bottom: 20px;
 }
 
+/* Fixed Close Button */
 .cv-lightbox .close-btn {
-  position: fixed;   /* FIXED instead of absolute */
+  position: fixed;   /* stays in place even when scrolling */
   top: 20px;
   right: 20px;
   color: #fff;
   font-size: 36px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 2100;
+  z-index: 2100; /* always on top */
   transition: color 0.3s ease;
 }
 
