@@ -5,6 +5,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karl's CV</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* ===== CV Section ===== */
+.cv-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.cv-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 28px;
+  color: #fff;
+  margin: 20px 0; /* only vertical spacing */
+}
+
+.cv-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;        /* space between pages */
+  flex-wrap: nowrap; /* no wrapping */
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;  /* horizontal scroll if screen too small */
+}
+
+.cv-page {
+  flex: 0 0 auto;   /* fixed width, don't grow/shrink */
+  width: 45vw;      /* each page ~45% of viewport width */
+  margin: 0;        /* no margin */
+}
+
+.cv-page img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, opacity 0.4s ease;
+}
+
+.cv-page img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Lightbox Overlay */
+.cv-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 40px 0;
+}
+
+.cv-lightbox img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.cv-lightbox .close-btn,
+.back-button {
+  position: absolute;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 2100;
+}
+
+.cv-lightbox .close-btn:hover,
+.back-button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.back-button {
+  top: 20px;
+  left: 20px;
+}
+
+.cv-lightbox .close-btn {
+  top: 20px;
+  right: 20px;
+}
+</style>
 </head>
 <body>
 
