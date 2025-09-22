@@ -4,55 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artworks - Karl's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   
   <!-- Back Button -->
-  <a href="index.html" class="back-button">Back</a>
+  <a href="index.html" class="back-button">← Back to Home</a>
 
   <!-- Banner -->
-  <header class="artworks-header">
-  <div class="banner-text">
+  <header class="gallery-header">
     <h1>Artwork</h1>
-    <h2>This is my gallery of artworks</h2>
-  </div>
-</header>
+    <p>This is my gallery of artworks</p>
+  </header>
 
   <!-- Gallery -->
   <main class="gallery-container">
     <div class="gallery-grid">
       <a href="images/pearl.jpg" target="_blank">
-        <img src="images/pearl.jpg" alt="Digital painting: Pearl">
+        <img src="images/pearl.jpg" alt="Digital painting titled 'Pearl'">
       </a>
       <a href="images/marymagdalene.jpg" target="_blank">
-        <img src="images/marymagdalene.jpg" alt="Traditional sketch in pencil">
+        <img src="images/marymagdalene.jpg" alt="Pencil sketch of Mary Magdalene">
       </a>
       <a href="images/human.jpg" target="_blank">
-        <img src="images/human.jpg" alt="Digital illustration">
+        <img src="images/human.jpg" alt="Digital illustration of a human figure">
       </a>
       <a href="images/theboyismine.jpg" target="_blank">
-        <img src="images/theboyismine.jpg" alt="Traditional watercolor piece">
+        <img src="images/theboyismine.jpg" alt="Traditional watercolor artwork titled 'The Boy is Mine'">
       </a>
       <a href="images/danas.jpg" target="_blank">
-        <img src="images/danas.jpg" alt="Digital painting: Pearl">
+        <img src="images/danas.jpg" alt="Digital painting titled 'Danas'">
       </a>
       <a href="images/qualityeducation.jpg" target="_blank">
-        <img src="images/qualityeducation.jpg" alt="Traditional sketch in pencil">
+        <img src="images/qualityeducation.jpg" alt="Traditional pencil sketch about quality education">
       </a>
       <a href="images/yumeko.jpg" target="_blank">
-        <img src="images/yumeko.jpg" alt="Digital illustration">
+        <img src="images/yumeko.jpg" alt="Digital illustration of Yumeko">
       </a>
       <a href="images/artcommission.jpg" target="_blank">
-        <img src="images/artcommission.jpg" alt="Traditional watercolor piece">
+        <img src="images/artcommission.jpg" alt="Traditional watercolor commission artwork">
       </a>
     </div>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Karl. All rights reserved.</p>
+    <p>© <span id="year"></span> Karl. All rights reserved.</p>
   </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
