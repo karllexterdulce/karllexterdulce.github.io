@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karl's CV</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<a href="index.html" class="back-button">← Back to Home</a>
+<a href="index.html" class="back-button">Back to Home</a>
 
 <div class="cv-container">
   <h2 class="cv-title">Curriculum Vitae</h2>
@@ -16,27 +16,22 @@
     <!-- Page 1 -->
     <div class="cv-page">
       <a href="#" data-page="0">
-        <img src="images/cv-page1.jpg" alt="CV Page 1 - Personal details and education">
+        <img src="images/cv-page1.jpg" alt="CV Page 1">
       </a>
     </div>
     <!-- Page 2 -->
     <div class="cv-page">
       <a href="#" data-page="1">
-        <img src="images/cv-page2.jpg" alt="CV Page 2 - Work experience and achievements">
+        <img src="images/cv-page2.jpg" alt="CV Page 2">
       </a>
     </div>
   </div>
 </div>
 
-<div class="cv-lightbox" role="dialog" aria-modal="true" aria-label="Full CV view">
-  <span class="close-btn" role="button" aria-label="Close CV lightbox">✕</span>
-  <img src="" alt="CV full page view" class="lightbox-img">
+<div class="cv-lightbox">
+  <span class="close-btn">✕</span>
+  <img src="" alt="CV Full Page" class="lightbox-img">
 </div>
-
-<!-- Footer -->
-<footer>
-  <p>© <span id="year"></span> Karl. All rights reserved.</p>
-</footer>
 
 <script>
 const lightbox = document.querySelector('.cv-lightbox');
@@ -59,17 +54,6 @@ closeBtn.addEventListener('click', () => {
   lightbox.style.display = 'none';
   document.body.style.overflow = 'auto'; // re-enable body scroll
 });
-
-// Close with Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === "Escape" && lightbox.style.display === 'flex') {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-});
-
-// Dynamic year
-document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
