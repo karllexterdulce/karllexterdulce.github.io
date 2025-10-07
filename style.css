@@ -190,7 +190,6 @@ header::before {
   position: relative;
   border: 1px solid #444;
   padding: 20px;
-  border-radius: 0 0 12px 12px; /* flat bottom, smooth corners below */
   color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   text-decoration: none;
@@ -199,7 +198,37 @@ header::before {
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  clip-path: path("M0,100 Q125,0 250,100 L250,400 L0,400 Z"); /* rainbow-like top */
+  border-radius: 200px 200px 0 0; /* makes the top a tall smooth arch */
+  height: 450px; /* make the card taller */
+}
+
+/* Optional hover image overlay */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.projects-grid .project-card:hover::before {
+  opacity: 1;
+}
+
+/* Text layering */
+.project-card h3,
+.project-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover lift effect */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Default background images */
