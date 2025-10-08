@@ -441,7 +441,7 @@ footer {
   align-items: center;
   height: 60vh; /* adjust if you want a taller/shorter banner */
   background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
-              url('images/artworks-banner.jpg') center/cover no-repeat;
+              url('images/banner4theartwork.jpg') center/cover no-repeat;
   text-align: center;
   color: #fff;
 }
