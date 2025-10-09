@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artworks - Karl's Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   
@@ -42,6 +42,7 @@
       </div>
     </div>
     <span class="close-btn">✕</span>
+    <span class="prev-btn">←</span>
     <span class="next-btn">→</span>
   </div>
 
@@ -57,6 +58,7 @@
     const lightboxBg = document.querySelector('.lightbox-bg');
     const closeBtn = document.querySelector('.close-btn');
     const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
 
     let currentIndex = 0;
 
@@ -86,8 +88,21 @@
       openLightbox(currentIndex);
     }
 
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      openLightbox(currentIndex);
+    }
+
     closeBtn.addEventListener('click', closeLightbox);
     nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', prevImage);
+
+    // Optional: Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
   </script>
 </body>
 </html>
