@@ -568,3 +568,115 @@ footer {
 .prev-btn:hover {
   background: rgba(0,0,0,0.8);
 }
+
+/* ===== Writing Page ===== */
+.writing-page {
+  background-color: #fff;
+  font-family: 'Georgia', serif;
+  color: #111;
+}
+
+.writing-header {
+  text-align: center;
+  padding: 80px 20px 40px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.writing-header h1 {
+  font-size: 54px;
+  font-family: 'Times New Roman', serif;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.writing-header .subhead {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.writing-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+/* Writing cards */
+.writing-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 40px;
+}
+
+.writing-card img {
+  width: 45%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.writing-text {
+  width: 55%;
+}
+
+.writing-text h2 {
+  font-family: 'Times New Roman', serif;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.writing-text p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.view-link {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.view-link:hover {
+  color: #555;
+  border-color: #555;
+}
+
+/* Alternate layout for even cards */
+.writing-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Back button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background: rgba(0,0,0,0.05);
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(0,0,0,0.15);
+}
