@@ -94,6 +94,23 @@ header::before {
   margin-top: 10px;
 }
 
+/* ===== Back Button (for Writing & Artworks) ===== */
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  z-index: 2;
+  transition: opacity 0.2s ease;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
+
 /* ===== About Section ===== */
 .about {
   padding: 60px 20px;
