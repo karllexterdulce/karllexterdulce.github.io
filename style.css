@@ -734,3 +734,8 @@ footer {
   opacity: 0.8;
   text-decoration: underline;
 }
+
+.translation {
+  display: block; /* makes it act like a separate line */
+  margin-top: 0.5em; /* adds space above it */
+}
