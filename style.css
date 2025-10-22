@@ -63,7 +63,7 @@ header::before {
 }
 
 .writing-header {
-  background-image: url("your-writing-banner.jpg");
+  background-image: url("banner4writing.jpg");
   background-size: cover;
   background-position: center;
   height: 40vh; /* smaller height — you can adjust between 35vh to 45vh */
