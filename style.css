@@ -63,7 +63,7 @@ header::before {
 }
 
 .writing-header {
-  background: url('banner4writing.jpg') center/cover no-repeat;
+  background: url("banner4writing.jpg") center/cover no-repeat;
   height: 40vh; /* you can adjust this — 35vh to 45vh works well */
   display: flex;
   align-items: center;
