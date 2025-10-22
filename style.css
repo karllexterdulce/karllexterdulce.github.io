@@ -62,6 +62,32 @@ header::before {
   margin: 10px 0 0;
 }
 
+.writing-header {
+  background-image: url("your-writing-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 40vh; /* smaller height — you can adjust between 35vh to 45vh */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.writing-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.writing-header h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
 /* ===== About Section ===== */
 .about {
   padding: 60px 20px;
