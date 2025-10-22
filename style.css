@@ -62,10 +62,12 @@ header::before {
   margin: 10px 0 0;
 }
 
+/* ===== Writing Header ===== */
 .writing-header {
-  background: url("banner4writing.jpg") center/cover no-repeat;
+  background: url("images/banner4writing.jpg") center/cover no-repeat;
   height: 40vh; /* you can adjust this — 35vh to 45vh works well */
   display: flex;
+  flex-direction: column; /* stack the title and subtitle vertically */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -73,12 +75,27 @@ header::before {
   position: relative;
 }
 
+.writing-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* soft dark overlay for text readability */
+}
+
+.writing-header h1,
+.writing-header .subhead {
+  position: relative;
+  z-index: 1;
+}
+
 .writing-header h1 {
+  font-family: "Times New Roman", serif;
   font-size: 2.8rem;
   margin-bottom: 0.3rem;
 }
 
-.writing-header h2 {
+.writing-header .subhead {
+  font-family: "Times New Roman", serif;
   font-size: 1.3rem;
   font-weight: 400;
   margin-top: 0;
