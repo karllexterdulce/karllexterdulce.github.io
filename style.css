@@ -65,21 +65,23 @@ header::before {
 /* ===== Writing Header ===== */
 .writing-header {
   background: url("images/banner4writing.jpg") center/cover no-repeat;
-  height: 40vh; /* you can adjust this — 35vh to 45vh works well */
+  height: 22vh; /* smaller like NYT header — try between 20–25vh */
   display: flex;
-  flex-direction: column; /* stack the title and subtitle vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   position: relative;
+  margin: 0;
+  padding: 40px 20px; /* space around text */
 }
 
 .writing-header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* soft dark overlay for text readability */
+  background: rgba(0, 0, 0, 0.35); /* subtle dark overlay */
 }
 
 .writing-header h1,
@@ -90,15 +92,17 @@ header::before {
 
 .writing-header h1 {
   font-family: "Times New Roman", serif;
-  font-size: 2.8rem;
-  margin-bottom: 0.3rem;
+  font-size: 2.4rem;
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 .writing-header .subhead {
   font-family: "Times New Roman", serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  margin-top: 0;
+  margin-top: 0.3rem;
+  opacity: 0.9;
 }
 
 /* ===== About Section ===== */
