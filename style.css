@@ -101,7 +101,7 @@ header::before {
 
 /* ===== Design Header ===== */
 .design-header {
-  background: url("images/banner4design.jpg") center/cover no-repeat;
+  background: url("images/banner4designs.jpg") center/cover no-repeat;
   position: relative;
   height: 22vh;
   overflow: hidden;
