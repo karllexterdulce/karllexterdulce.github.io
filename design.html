@@ -3,182 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Designs</title>
-  <link rel="stylesheet" href="style.css?v=7">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Artworks - Karl's Portfolio</title>
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
-<body class="designs-page">
-
-  <!-- Banner Header -->
-  <header class="designs-header bg-indigo-600 text-white py-12 relative">
-    <a href="index.html" class="absolute left-6 top-6 text-white bg-indigo-800 px-4 py-2 rounded hover:bg-indigo-900">Back</a>
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-2">Designs</h1>
-      <h2 class="text-lg md:text-xl">My sample works: publications, PowerPoints, and creative posters.</h2>
+<body>
+  
+  <!-- Banner -->
+  <header class="design-header">
+    <a href="index.html" class="back-button">Back</a>
+    <div class="banner-text">
+      <h1>Designs</h1>
+      <h2>My sample works: publication materials, PowerPoints, and creative posters.</h2>
     </div>
   </header>
-  
-<!-- Design Section -->
-<section id="designs" class="py-12 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">My Designs</h2>
 
-    <!-- Stack Navigation -->
-    <div class="relative max-w-4xl mx-auto">
-      <button id="prevStack" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-4xl font-bold text-gray-600 hover:text-gray-900 z-20">&#9664;</button>
-      <button id="nextStack" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-4xl font-bold text-gray-600 hover:text-gray-900 z-20">&#9654;</button>
+  <!-- Gallery -->
+  <main class="gallery-container">
+    <div class="gallery-grid">
+      <a href="#" data-index="0"><img src="images/design1.jpg" alt="Digital painting: Pearl"></a>
+      <a href="#" data-index="1"><img src="images/design2.jpg" alt="Traditional sketch in pencil"></a>
+    </div>
+  </main>
 
-      <!-- Stacks Wrapper -->
-      <div id="stacksWrapper" class="relative overflow-hidden h-96">
-        <!-- Stack 1 -->
-        <div class="stack absolute inset-0 flex transition-all duration-500 opacity-100">
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5 cursor-pointer">
-            <img src="ppt1.jpg" alt="Publication 1" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Publication 1</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5 cursor-pointer">
-            <img src="pub2.jpg" alt="Publication 2" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Publication 2</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5 cursor-pointer">
-            <img src="pub3.jpg" alt="Publication 3" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Publication 3</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stack 2 -->
-        <div class="stack absolute inset-0 flex transition-all duration-500 opacity-0">
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5 cursor-pointer">
-            <img src="ppt1.jpg" alt="PowerPoint 1" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">PowerPoint 1</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5 cursor-pointer">
-            <img src="ppt2.jpg" alt="PowerPoint 2" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">PowerPoint 2</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5 cursor-pointer">
-            <img src="poster1.jpg" alt="Poster 1" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Poster 1</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-        </div>
+  <!-- Lightbox -->
+  <div class="art-lightbox">
+    <div class="lightbox-bg"></div>
+    <div class="lightbox-content">
+      <img src="" alt="Artwork Full View" class="lightbox-img">
+      <div class="lightbox-desc">
+        <h3>Artwork Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo ipsum sed mi luctus, nec convallis justo pretium.</p>
       </div>
     </div>
+    <span class="close-btn">✕</span>
+    <span class="prev-btn">←</span>
+    <span class="next-btn">→</span>
   </div>
-</section>
 
-<!-- Multi-slide Modal -->
-<div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center hidden z-50">
-  <div class="relative w-3/4 max-w-3xl bg-white rounded shadow-lg">
-    <button id="closeModal" class="absolute top-2 right-4 text-xl font-bold text-gray-700 hover:text-gray-900">&times;</button>
-    <div id="modalContent" class="overflow-hidden relative h-96">
-      <!-- Slides will be injected here -->
-    </div>
-    <button id="prevSlide" class="absolute left-2 top-1/2 transform -translate-y-1/2 text-3xl font-bold text-gray-700 hover:text-gray-900">&#9664;</button>
-    <button id="nextSlide" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-3xl font-bold text-gray-700 hover:text-gray-900">&#9654;</button>
-  </div>
-</div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Karl. All rights reserved.</p>
+  </footer>
 
-<!-- JS -->
-<script>
-const stacks = document.querySelectorAll('.stack');
-let currentStack = 0;
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery-grid a img');
+    const lightbox = document.querySelector('.art-lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const lightboxBg = document.querySelector('.lightbox-bg');
+    const closeBtn = document.querySelector('.close-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
 
-function showStack(index) {
-  stacks.forEach((stack, i) => {
-    if(i === index){
-      stack.style.opacity = 1;
-      stack.style.transform = 'translateX(0)';
-    } else if(i < index){
-      stack.style.opacity = 0;
-      stack.style.transform = 'translateX(-100%)';
-    } else {
-      stack.style.opacity = 0;
-      stack.style.transform = 'translateX(100%)';
-    }
-  });
-}
+    let currentIndex = 0;
 
-document.getElementById('nextStack').addEventListener('click', () => {
-  currentStack = (currentStack + 1) % stacks.length;
-  showStack(currentStack);
-});
-
-document.getElementById('prevStack').addEventListener('click', () => {
-  currentStack = (currentStack - 1 + stacks.length) % stacks.length;
-  showStack(currentStack);
-});
-
-showStack(currentStack);
-
-// Hover stack animation
-document.querySelectorAll('.stack-card').forEach((card, i, arr) => {
-  card.addEventListener('mouseenter', () => {
-    arr.forEach((c,j)=>{
-      if(j<i) c.style.transform='translate(-10px,-10px) scale(0.95)';
-      else if(j===i) c.style.transform='translate(0,0) scale(1.05)';
-      else c.style.transform='translate(10px,10px) scale(0.95)';
+    galleryImages.forEach((img, index) => {
+      img.parentElement.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLightbox(index);
+      });
     });
-  });
-  card.addEventListener('mouseleave', () => {
-    arr.forEach(c=>c.style.transform='translate(0,0) scale(1)');
-  });
 
-  // Click to see full project
-  card.addEventListener('click', () => openModal(card));
-});
+    function openLightbox(index) {
+      currentIndex = index;
+      const src = galleryImages[index].src;
+      lightboxImg.src = src;
+      lightboxBg.style.backgroundImage = `url(${src})`;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
 
-// Modal slides
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modalContent');
-let slides = [];
-let currentSlide = 0;
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
 
-function openModal(card){
-  // Example: simulate multiple slides per project
-  slides = [
-    card.querySelector('img').src,
-    'placeholder-slide2.jpg',
-    'placeholder-slide3.jpg'
-  ];
-  currentSlide = 0;
-  renderSlide();
-  modal.classList.remove('hidden');
-}
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      openLightbox(currentIndex);
+    }
 
-function renderSlide(){
-  modalContent.innerHTML = `<img src="${slides[currentSlide]}" class="w-full h-full object-contain">`;
-}
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      openLightbox(currentIndex);
+    }
 
-document.getElementById('closeModal').addEventListener('click',()=>modal.classList.add('hidden'));
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', prevImage);
 
-document.getElementById('nextSlide').addEventListener('click',()=>{
-  currentSlide = (currentSlide+1)%slides.length;
-  renderSlide();
-});
-
-document.getElementById('prevSlide').addEventListener('click',()=>{
-  currentSlide = (currentSlide-1+slides.length)%slides.length;
-  renderSlide();
-});
-</script>
-
-<!-- Tailwind CSS -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    // Optional: Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
+  </script>
+</body>
+</html>
