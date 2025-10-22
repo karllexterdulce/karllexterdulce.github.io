@@ -63,18 +63,14 @@ header::before {
 }
 
 .writing-header {
-  background-image: url("banner4writing.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 35vh; /* smaller height — you can adjust between 35vh to 45vh */
+  background: url('banner4writing.jpg') center/cover no-repeat;
+  height: 40vh; /* you can adjust this — 35vh to 45vh works well */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
   color: white;
-  margin-top: 0;
-  margin-bottom: 0;
+  position: relative;
 }
 
 .writing-header h1 {
