@@ -69,11 +69,11 @@ header::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* moves text upward */
+  justify-content: center; /* change this from flex-start to center */
   text-align: center;
   color: white;
   position: relative;
-  padding-top: 40px; /* adjust to move text further down or up */
+  padding-top: 0; /* remove this */
 }
 
 header .banner-text {
