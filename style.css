@@ -63,30 +63,30 @@ header::before {
 }
 
 /* ===== Writing Header ===== */
-header {
+.writing-header {
   background: url("images/banner4writing.jpg") center/cover no-repeat;
   height: 22vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* moves text upward */
+  justify-content: flex-start;
   text-align: center;
   color: white;
   position: relative;
-  padding-top: 40px; /* adjust to move text further down or up */
+  padding-top: 40px;
 }
 
-header .banner-text {
-  margin-top: 20px; /* reduce this to move text closer to top */
+.writing-header .banner-text {
+  margin-top: 20px;
 }
 
-header h1 {
+.writing-header h1 {
   font-family: "Times New Roman", serif;
   font-size: 56px;
   margin: 0;
 }
 
-header h2 {
+.writing-header h2 {
   font-family: "Times New Roman", serif;
   font-size: 24px;
   color: #f5f5f5;
