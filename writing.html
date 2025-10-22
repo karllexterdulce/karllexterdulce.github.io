@@ -1,113 +1,60 @@
-<!-- Design Section -->
-<section id="designs" class="py-12 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">My Designs</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing - Karl's Portfolio</title>
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body class="writing-page">
 
-    <!-- Stack Navigation Container -->
-    <div class="relative max-w-4xl mx-auto">
-      <!-- Left Arrow -->
-      <button id="prevStack" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-4xl font-bold text-gray-600 hover:text-gray-900 z-20">
-        &#9664;
-      </button>
-
-      <!-- Right Arrow -->
-      <button id="nextStack" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-4xl font-bold text-gray-600 hover:text-gray-900 z-20">
-        &#9654;
-      </button>
-
-      <!-- Stacks Wrapper -->
-      <div id="stacksWrapper" class="overflow-hidden relative h-96">
-        <!-- Stack 1 -->
-        <div class="stack absolute inset-0 flex transition-transform duration-500">
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5">
-            <img src="pub1.jpg" alt="Publication 1" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Publication 1</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5">
-            <img src="pub2.jpg" alt="Publication 2" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Publication 2</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5">
-            <img src="pub3.jpg" alt="Publication 3" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Publication 3</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stack 2 -->
-        <div class="stack absolute inset-0 flex transition-transform duration-500 translate-x-full">
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5">
-            <img src="ppt1.jpg" alt="PowerPoint 1" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">PowerPoint 1</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5">
-            <img src="ppt2.jpg" alt="PowerPoint 2" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">PowerPoint 2</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-
-          <div class="stack-card relative w-full rounded shadow-lg bg-white overflow-hidden m-0.5">
-            <img src="poster1.jpg" alt="Poster 1" class="w-full h-full object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold text-lg">Poster 1</h3>
-              <p class="text-gray-600 text-sm">Click to see full project</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Banner -->
+<header class="writing-header">
+<a href="index.html" class="back-button">Back</a>
+  <div class="banner-text">
+    <h1>Writing Pieces</h1>
+    <h2>My sample works of poetry and creative reflections.</h2>
   </div>
-</section>
+</header>
 
-<!-- JS for Navigation -->
-<script>
-  const stacks = document.querySelectorAll('.stack');
-  let currentStack = 0;
+  <!-- Writing Entries -->
+  <main class="writing-container">
 
-  const showStack = (index) => {
-    stacks.forEach((stack, i) => {
-      if(i === index) stack.style.transform = 'translateX(0)';
-      else if(i < index) stack.style.transform = 'translateX(-100%)';
-      else stack.style.transform = 'translateX(100%)';
-    });
-  };
+    <article class="writing-card">
+      <img src="images/article1.jpg" alt="Article 1 image">
+      <div class="writing-text">
+        <h2><em>In</em>to Such <em>Security</em></h2>
+        <p>A poem about one’s insecurity and the longing for such security that whoever they are, it will be enough.</p>
+        <a href="#" class="view-link">Click here to read</a>
+      </div>
+    </article>
 
-  document.getElementById('nextStack').addEventListener('click', () => {
-    currentStack = (currentStack + 1) % stacks.length;
-    showStack(currentStack);
-  });
+    <article class="writing-card">
+      <img src="images/article2.jpg" alt="Article 2 image">
+      <div class="writing-text">
+        <h2>TAHO</h2>
+        <p>
+  Ang tulang tungkol sa nakaraang kasintamis ng arnibal at kasinglambot ng malasutlang tokwa — ang init ng yakap na nagmumula sa taglimang pisong taho.<br>
+  <em class="translation">A poem about a past as sweet as syrup and as soft as silken tofu — the warmth of an embrace poured from a five-peso cup of taho.</em>
+</p>
+        <a href="#" class="view-link">Click here to read</a>
+      </div>
+    </article>
 
-  document.getElementById('prevStack').addEventListener('click', () => {
-    currentStack = (currentStack - 1 + stacks.length) % stacks.length;
-    showStack(currentStack);
-  });
+    <article class="writing-card">
+      <img src="images/article3.jpg" alt="Article 3 image">
+      <div class="writing-text">
+        <h2>Fields of Bountiful Dead Romances</h2>
+        <p>A Critique of Thomas Hardy's <em>Far from the Madding Crowd</em></p>
+        <a href="#" class="view-link">Click here to read</a>
+      </div>
+    </article>
 
-  // Initial display
-  showStack(currentStack);
+  </main>
 
-  // Click to see full project (example modal)
-  document.querySelectorAll('.stack-card').forEach(card => {
-    card.addEventListener('click', () => {
-      alert('Here you could open a modal/lightbox for multi-page projects!');
-    });
-  });
-</script>
+  <footer>
+    <p>© 2025 Karl. All rights reserved.</p>
+  </footer>
 
-<!-- Tailwind CSS -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</body>
+</html>
