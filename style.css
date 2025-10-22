@@ -65,7 +65,7 @@ header::before {
 /* ===== Writing Header ===== */
 .writing-header {
   background: url("images/banner4writing.jpg") center/cover no-repeat;
-  height: 22vh; /* smaller like NYT header — try between 20–25vh */
+  height: 22vh; /* smaller like NYT header */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +74,7 @@ header::before {
   color: white;
   position: relative;
   margin: 0;
-  padding: 40px 20px; /* space around text */
+  padding: 40px 20px;
 }
 
 .writing-header::before {
@@ -88,21 +88,19 @@ header::before {
 .writing-header .subhead {
   position: relative;
   z-index: 1;
+  font-family: "Times New Roman", serif;
+  color: #fff;
 }
 
 .writing-header h1 {
-  font-family: "Times New Roman", serif;
-  font-size: 2.4rem;
+  font-size: 56px; /* matches artworks section */
   margin: 0;
-  letter-spacing: 1px;
 }
 
 .writing-header .subhead {
-  font-family: "Times New Roman", serif;
-  font-size: 1.1rem;
+  font-size: 28px;
   font-weight: 400;
-  margin-top: 0.3rem;
-  opacity: 0.9;
+  margin-top: 10px;
 }
 
 /* ===== About Section ===== */
