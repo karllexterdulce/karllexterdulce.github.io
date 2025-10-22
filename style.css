@@ -103,19 +103,24 @@ header::before {
   text-align: center;
   padding: 40px 20px; /* smaller vertical padding */
   position: relative;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
               url('images/banner4designs.jpg') center/cover no-repeat;
   color: white;
-  /* remove border-bottom to get rid of white line */
+  height: 40vh; /* fix height so banner is consistent */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.gallery-header h1 {
+/* Header text */
+.design-header h1 {
   font-family: "Times New Roman", serif;
   font-size: 42px;
   margin-bottom: 10px;
 }
 
-.gallery-header p {
+.design-header p {
   font-size: 18px;
   color: #ccc;
 }
