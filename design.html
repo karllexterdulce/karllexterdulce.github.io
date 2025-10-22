@@ -1,69 +1,62 @@
-<!-- Designs Section -->
+<!-- Design Section -->
 <section id="designs" class="py-12 bg-gray-50">
   <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-8">My Designs</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">My Designs</h2>
 
-    <!-- Filter Buttons -->
-    <div class="flex justify-center gap-4 mb-8">
-      <button class="filter-btn px-4 py-2 bg-indigo-500 text-white rounded" data-filter="all">All</button>
-      <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded" data-filter="pub">Publications</button>
-      <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded" data-filter="ppt">PowerPoints</button>
-      <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-800 rounded" data-filter="poster">Posters</button>
-    </div>
-
-    <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Example project card -->
-      <div class="project-card" data-category="pub">
-        <img src="pub1.jpg" alt="Publication 1" class="rounded shadow hover:scale-105 transition-transform duration-300">
-        <h3 class="mt-2 font-semibold text-lg">Publication 1</h3>
-        <p class="text-gray-600 text-sm">A brief description of this project.</p>
+    <!-- Stack Container -->
+    <div class="stack-container relative w-full max-w-4xl mx-auto h-96">
+      <!-- Project Cards -->
+      <div class="stack-card absolute top-0 left-0 w-full h-full rounded shadow-lg bg-white overflow-hidden transition-transform duration-300" style="z-index:4;">
+        <img src="pub1.jpg" alt="Publication 1" class="w-full h-full object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Publication 1</h3>
+          <p class="text-gray-600 text-sm">A brief description of this project.</p>
+        </div>
       </div>
 
-      <div class="project-card" data-category="ppt">
-        <img src="ppt1.jpg" alt="PowerPoint 1" class="rounded shadow hover:scale-105 transition-transform duration-300">
-        <h3 class="mt-2 font-semibold text-lg">PowerPoint 1</h3>
-        <p class="text-gray-600 text-sm">A brief description of this project.</p>
+      <div class="stack-card absolute top-4 left-4 w-full h-full rounded shadow-lg bg-white overflow-hidden transition-transform duration-300" style="z-index:3;">
+        <img src="ppt1.jpg" alt="PowerPoint 1" class="w-full h-full object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">PowerPoint 1</h3>
+          <p class="text-gray-600 text-sm">A brief description of this project.</p>
+        </div>
       </div>
 
-      <div class="project-card" data-category="poster">
-        <img src="poster1.jpg" alt="Poster 1" class="rounded shadow hover:scale-105 transition-transform duration-300">
-        <h3 class="mt-2 font-semibold text-lg">Poster 1</h3>
-        <p class="text-gray-600 text-sm">A brief description of this project.</p>
+      <div class="stack-card absolute top-8 left-8 w-full h-full rounded shadow-lg bg-white overflow-hidden transition-transform duration-300" style="z-index:2;">
+        <img src="poster1.jpg" alt="Poster 1" class="w-full h-full object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg">Poster 1</h3>
+          <p class="text-gray-600 text-sm">A brief description of this project.</p>
+        </div>
       </div>
-
-      <!-- Add more project cards here -->
     </div>
   </div>
 </section>
 
-<!-- Filter Script -->
+<!-- Hover Script -->
 <script>
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projects = document.querySelectorAll('.project-card');
+  const cards = document.querySelectorAll('.stack-card');
 
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Reset button styles
-      filterButtons.forEach(b => {
-        b.classList.remove('bg-indigo-500', 'text-white');
-        b.classList.add('bg-gray-200', 'text-gray-800');
-      });
-      btn.classList.add('bg-indigo-500', 'text-white');
-      btn.classList.remove('bg-gray-200', 'text-gray-800');
-
-      const filter = btn.getAttribute('data-filter');
-
-      projects.forEach(project => {
-        if (filter === 'all' || project.getAttribute('data-category') === filter) {
-          project.style.display = 'block';
+  cards.forEach((card, i) => {
+    card.addEventListener('mouseenter', () => {
+      cards.forEach((c, j) => {
+        if(j < i){
+          c.style.transform = 'translate(-10px, -10px) scale(0.95)';
+        } else if(j === i){
+          c.style.transform = 'translate(0px, 0px) scale(1.05)';
         } else {
-          project.style.display = 'none';
+          c.style.transform = 'translate(10px, 10px) scale(0.95)';
         }
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      cards.forEach((c) => {
+        c.style.transform = '';
       });
     });
   });
 </script>
 
-<!-- Tailwind CSS CDN for quick styling -->
+<!-- Tailwind CSS CDN -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
