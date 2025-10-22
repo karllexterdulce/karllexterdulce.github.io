@@ -315,7 +315,7 @@ header::before {
   background-image: url("images/banner4artwork.jpg");
 }
 .projects-grid .project-card:nth-of-type(3)::before {
-  background-image: url("images/banner4designs.jpg");
+  background-image: url("images/banner4design.jpg");
 }
 
 /* Show overlay on hover */
