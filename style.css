@@ -160,7 +160,7 @@ header::before {
   border-bottom: 1px solid #eee;
   position: relative;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2)),
-              url('images/banner4writing.jpg') center/cover no-repeat;
+              url('images/banner4designs.jpg') center/cover no-repeat;
   color: white;
 }
 
