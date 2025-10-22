@@ -103,9 +103,8 @@ header::before {
   text-align: center;
   padding: 40px 20px; /* smaller vertical padding */
   position: relative;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0)),
               url('images/banner4designs.jpg') center/cover no-repeat;
-  color: white;
   height: 40vh; /* fix height so banner is consistent */
   display: flex;
   flex-direction: column;
