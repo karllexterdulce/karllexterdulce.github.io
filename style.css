@@ -65,7 +65,7 @@ header::before {
 /* ===== Writing Header ===== */
 .writing-header {
   background: url("images/banner4writing.jpg") center/cover no-repeat;
-  height: 22vh; /* smaller like NYT header */
+  height: 22vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +73,6 @@ header::before {
   text-align: center;
   color: white;
   position: relative;
-  margin: 0;
   padding: 40px 20px;
 }
 
@@ -81,27 +80,25 @@ header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* subtle dark overlay */
+  background: rgba(0, 0, 0, 0.35);
 }
 
-.writing-header h1,
-.writing-header .subhead {
+.banner-text h1 {
+  font-family: "Times New Roman", serif;
+  font-size: 56px;
+  color: white;
+  margin: 0;
   position: relative;
   z-index: 1;
+}
+
+.banner-text h2 {
   font-family: "Times New Roman", serif;
-  color: #fff;
-  font-weight: normal;
-}
-
-.writing-header h1 {
-  font-size: 56px;
-  margin: 0;
-}
-
-.writing-header .subhead {
   font-size: 28px;
+  color: #f5f5f5;
   margin-top: 8px;
-  opacity: 0.9;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== About Section ===== */
