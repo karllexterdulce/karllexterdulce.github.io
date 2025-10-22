@@ -69,24 +69,24 @@ header::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-start; /* moves text upward */
   text-align: center;
   color: white;
   position: relative;
-  padding-top: 40px;
+  padding-top: 40px; /* adjust to move text further down or up */
 }
 
-.writing-header .banner-text {
-  margin-top: 20px;
+header .banner-text {
+  margin-top: 20px; /* reduce this to move text closer to top */
 }
 
-.writing-header h1 {
+header h1 {
   font-family: "Times New Roman", serif;
   font-size: 56px;
   margin: 0;
 }
 
-.writing-header h2 {
+header h2 {
   font-family: "Times New Roman", serif;
   font-size: 24px;
   color: #f5f5f5;
