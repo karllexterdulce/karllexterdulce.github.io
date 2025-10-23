@@ -3,12 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artworks - Karl's Portfolio</title>
+  <title>Designs - Karl's Portfolio</title>
   <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    /* ===== BASIC STYLES ===== */
+    body {
+      background-color: #161819;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .design-header {
+      position: relative;
+      height: 22vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .design-header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .design-header h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.8;
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    /* Back button (top-right) */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      text-decoration: none;
+      color: #f5f5f5;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Gallery Grid */
+    .gallery-container {
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== PROJECT THUMBNAILS ===== */
+    .project {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .project-thumb {
+      width: 320px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-thumb:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== LIGHTBOX (ARTWORK) ===== */
+    .art-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .art-lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .lightbox-desc {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .lightbox-desc h3 {
+      margin-bottom: 10px;
+    }
+
+    .lightbox-desc p {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .art-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .prev-btn { left: 40px; }
+    .next-btn { right: 40px; }
+
+    /* ===== PROJECT LIGHTBOX ===== */
+    .project-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1100;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .project-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .project-images-container {
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      width: 90%;
+      height: 85%;
+    }
+
+    .project-images-container img {
+      width: 100%;
+      object-fit: contain;
+      flex-shrink: 0;
+      margin-right: 10px;
+      border-radius: 12px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+    }
+
+    .arrow.prev { left: 40px; }
+    .arrow.next { right: 40px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
 </head>
+
 <body>
-  
-  <!-- Banner -->
+  <!-- Header -->
   <header class="design-header">
     <a href="index.html" class="back-button">Back</a>
     <div class="banner-text">
@@ -25,19 +238,33 @@
     </div>
   </main>
 
-  <!-- Lightbox -->
+  <!-- Project Section -->
+  <section class="project">
+    <img src="images/project1-thumb.jpg" alt="Project 1" class="project-thumb"
+      data-pages='["images/project1-page1.jpg","images/project1-page2.jpg","images/project1-page3.jpg"]'>
+    <h3>Project 1</h3>
+  </section>
+
+  <!-- ===== ART LIGHTBOX ===== -->
   <div class="art-lightbox">
-    <div class="lightbox-bg"></div>
-    <div class="lightbox-content">
-      <img src="" alt="Artwork Full View" class="lightbox-img">
-      <div class="lightbox-desc">
-        <h3>Artwork Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo ipsum sed mi luctus, nec convallis justo pretium.</p>
-      </div>
+    <img src="" alt="Artwork Full View" class="lightbox-img">
+    <div class="lightbox-desc">
+      <h3>Artwork Title</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo ipsum sed mi luctus.</p>
     </div>
-    <span class="close-btn">✕</span>
+    <span class="art-close">✕</span>
     <span class="prev-btn">←</span>
     <span class="next-btn">→</span>
+  </div>
+
+  <!-- ===== PROJECT LIGHTBOX ===== -->
+  <div class="project-lightbox">
+    <span class="project-close">✕</span>
+    <div class="project-images-container">
+      <!-- JS will insert images here -->
+    </div>
+    <span class="arrow prev">‹</span>
+    <span class="arrow next">›</span>
   </div>
 
   <!-- Footer -->
@@ -46,14 +273,13 @@
   </footer>
 
   <script>
+    /* ===== ART LIGHTBOX ===== */
     const galleryImages = document.querySelectorAll('.gallery-grid a img');
-    const lightbox = document.querySelector('.art-lightbox');
-    const lightboxImg = document.querySelector('.lightbox-img');
-    const lightboxBg = document.querySelector('.lightbox-bg');
-    const closeBtn = document.querySelector('.close-btn');
+    const artLightbox = document.querySelector('.art-lightbox');
+    const artLightboxImg = document.querySelector('.lightbox-img');
+    const artCloseBtn = document.querySelector('.art-close');
     const nextBtn = document.querySelector('.next-btn');
     const prevBtn = document.querySelector('.prev-btn');
-
     let currentIndex = 0;
 
     galleryImages.forEach((img, index) => {
@@ -66,14 +292,13 @@
     function openLightbox(index) {
       currentIndex = index;
       const src = galleryImages[index].src;
-      lightboxImg.src = src;
-      lightboxBg.style.backgroundImage = `url(${src})`;
-      lightbox.style.display = 'flex';
+      artLightboxImg.src = src;
+      artLightbox.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
-      lightbox.style.display = 'none';
+      artLightbox.style.display = 'none';
       document.body.style.overflow = 'auto';
     }
 
@@ -87,15 +312,53 @@
       openLightbox(currentIndex);
     }
 
-    closeBtn.addEventListener('click', closeLightbox);
+    artCloseBtn.addEventListener('click', closeLightbox);
     nextBtn.addEventListener('click', nextImage);
     prevBtn.addEventListener('click', prevImage);
 
-    // Optional: Close with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
+    });
+
+    /* ===== PROJECT LIGHTBOX ===== */
+    const projectLightbox = document.querySelector('.project-lightbox');
+    const projectImagesContainer = document.querySelector('.project-images-container');
+    const projectCloseBtn = document.querySelector('.project-close');
+    const projectPrev = document.querySelector('.project-lightbox .prev');
+    const projectNext = document.querySelector('.project-lightbox .next');
+    let currentProjectIndex = 0;
+    let currentImages = [];
+
+    document.querySelectorAll('.project-thumb').forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        currentProjectIndex = 0;
+        currentImages = JSON.parse(thumb.dataset.pages);
+        projectImagesContainer.innerHTML = '';
+        currentImages.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          projectImagesContainer.appendChild(img);
+        });
+        projectLightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    projectCloseBtn.addEventListener('click', () => {
+      projectLightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    projectPrev.addEventListener('click', () => {
+      currentProjectIndex = Math.max(0, currentProjectIndex - 1);
+      projectImagesContainer.scrollLeft = currentProjectIndex * projectImagesContainer.clientWidth;
+    });
+
+    projectNext.addEventListener('click', () => {
+      currentProjectIndex = Math.min(currentImages.length - 1, currentProjectIndex + 1);
+      projectImagesContainer.scrollLeft = currentProjectIndex * projectImagesContainer.clientWidth;
     });
   </script>
 </body>
