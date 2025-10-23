@@ -834,3 +834,57 @@ footer {
   display: block; /* makes it act like a separate line */
   margin-top: 0.5em; /* adds space above it */
 }
+
+/* Lightbox Overlay */
+.cv-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2000;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Full-size CV image */
+.cv-lightbox img {
+  width: 90vw; /* almost full viewport width */
+  max-height: 90vh; /* almost full viewport height */
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Arrow buttons */
+.cv-lightbox .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2100;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.cv-lightbox .arrow:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.cv-lightbox .prev {
+  left: 20px;
+}
+
+.cv-lightbox .next {
+  right: 20px;
+}
