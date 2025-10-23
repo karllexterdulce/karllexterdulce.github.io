@@ -160,60 +160,13 @@
     .prev-btn { left: 40px; }
     .next-btn { right: 40px; }
 
-    /* ===== PROJECT LIGHTBOX ===== */
-    .project-lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 1100;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .project-close {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #fff;
-    }
-
-    .project-images-container {
-      display: flex;
-      width: 90%;
-      height: 85%;
-      overflow: hidden;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.6s ease;
-    }
-
-    .project-images-container img {
-      width: 100%;
-      max-width: 80vw;
-      object-fit: contain;
-      flex-shrink: 0;
-      border-radius: 12px;
-      transition: transform 0.6s ease;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      color: #fff;
-      cursor: pointer;
-      user-select: none;
-      font-weight: bold;
-    }
-
-    .arrow.prev { left: 40px; }
-    .arrow.next { right: 40px; }
+    <!-- ===== PROJECT LIGHTBOX ===== -->
+<div class="project-lightbox">
+  <span class="project-close">✕</span>
+  <img src="" alt="Project Page" class="project-image">
+  <span class="arrow prev">‹</span>
+  <span class="arrow next">›</span>
+</div>
 
     /* ===== FOOTER ===== */
     footer {
@@ -268,99 +221,61 @@
   </footer>
 
   <script>
-    /* ===== ART LIGHTBOX ===== */
-    const galleryImages = document.querySelectorAll('.gallery-grid a img');
-    const artLightbox = document.querySelector('.art-lightbox');
-    const artLightboxImg = document.querySelector('.lightbox-img');
-    const artCloseBtn = document.querySelector('.art-close');
-    const nextBtn = document.querySelector('.next-btn');
-    const prevBtn = document.querySelector('.prev-btn');
-    let currentIndex = 0;
-
-    galleryImages.forEach((img, index) => {
-      img.parentElement.addEventListener('click', (e) => {
-        e.preventDefault();
-        openLightbox(index);
-      });
-    });
-
-    function openLightbox(index) {
-      currentIndex = index;
-      const src = galleryImages[index].src;
-      artLightboxImg.src = src;
-      artLightbox.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      artLightbox.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      openLightbox(currentIndex);
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      openLightbox(currentIndex);
-    }
-
-    artCloseBtn.addEventListener('click', closeLightbox);
-    nextBtn.addEventListener('click', nextImage);
-    prevBtn.addEventListener('click', prevImage);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') prevImage();
-    });
-
     /* ===== PROJECT LIGHTBOX ===== */
-    const projectLightbox = document.querySelector('.project-lightbox');
-    const projectImagesContainer = document.querySelector('.project-images-container');
-    const projectCloseBtn = document.querySelector('.project-close');
-    const projectPrev = document.querySelector('.project-lightbox .prev');
-    const projectNext = document.querySelector('.project-lightbox .next');
-    let currentProjectIndex = 0;
-    let currentImages = [];
+const projectLightbox = document.querySelector('.project-lightbox');
+const projectImage = document.querySelector('.project-image');
+const projectCloseBtn = document.querySelector('.project-close');
+const projectPrev = document.querySelector('.arrow.prev');
+const projectNext = document.querySelector('.arrow.next');
 
-    document.querySelectorAll('.project-thumb').forEach((thumb) => {
-      thumb.addEventListener('click', () => {
-        currentProjectIndex = 0;
-        currentImages = JSON.parse(thumb.dataset.pages);
-        projectImagesContainer.innerHTML = '';
-        currentImages.forEach(src => {
-          const img = document.createElement('img');
-          img.src = src;
-          projectImagesContainer.appendChild(img);
-        });
-        projectLightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        updateProjectView();
-      });
-    });
+let currentProjectImages = [];
+let currentProjectIndex = 0;
 
-    function updateProjectView() {
-      const offset = -currentProjectIndex * 100;
-      projectImagesContainer.style.transform = `translateX(${offset}%)`;
-    }
+document.querySelectorAll('.project-thumb').forEach((thumb) => {
+  thumb.addEventListener('click', () => {
+    currentProjectImages = JSON.parse(thumb.dataset.pages);
+    currentProjectIndex = 0;
+    openProjectLightbox();
+  });
+});
 
-    projectPrev.addEventListener('click', () => {
-      currentProjectIndex = (currentProjectIndex - 1 + currentImages.length) % currentImages.length;
-      updateProjectView();
-    });
+function openProjectLightbox() {
+  projectLightbox.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  updateProjectImage();
+}
 
-    projectNext.addEventListener('click', () => {
-      currentProjectIndex = (currentProjectIndex + 1) % currentImages.length;
-      updateProjectView();
-    });
+function closeProjectLightbox() {
+  projectLightbox.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
 
-    projectCloseBtn.addEventListener('click', () => {
-      projectLightbox.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    });
+function updateProjectImage() {
+  projectImage.style.opacity = 0;
+  setTimeout(() => {
+    projectImage.src = currentProjectImages[currentProjectIndex];
+    projectImage.onload = () => (projectImage.style.opacity = 1);
+  }, 150);
+}
+
+projectPrev.addEventListener('click', () => {
+  currentProjectIndex = (currentProjectIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+  updateProjectImage();
+});
+
+projectNext.addEventListener('click', () => {
+  currentProjectIndex = (currentProjectIndex + 1) % currentProjectImages.length;
+  updateProjectImage();
+});
+
+projectCloseBtn.addEventListener('click', closeProjectLightbox);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeProjectLightbox();
+  if (e.key === 'ArrowRight') projectNext.click();
+  if (e.key === 'ArrowLeft') projectPrev.click();
+});
+
   </script>
 </body>
 </html>
