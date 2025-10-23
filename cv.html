@@ -18,23 +18,23 @@
   font-family: 'Times New Roman', Times, serif;
   font-size: 28px;
   color: #fff;
-  margin: 20px 0; /* only vertical spacing */
+  margin: 20px 0;
 }
 
 .cv-grid {
   display: flex;
   justify-content: center;
-  gap: 20px;        /* space between pages */
-  flex-wrap: nowrap; /* no wrapping */
+  gap: 20px;
+  flex-wrap: nowrap;
   padding: 0;
   margin: 0;
-  overflow-x: auto;  /* horizontal scroll if screen too small */
+  overflow-x: auto;
 }
 
 .cv-page {
-  flex: 0 0 auto;   /* fixed width, don't grow/shrink */
-  width: 45vw;      /* each page ~45% of viewport width */
-  margin: 0;        /* no margin */
+  flex: 0 0 auto;
+  width: 45vw;
+  margin: 0;
 }
 
 .cv-page img {
@@ -44,6 +44,7 @@
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, opacity 0.4s ease;
+  cursor: pointer;
 }
 
 .cv-page img:hover {
@@ -51,7 +52,7 @@
   opacity: 0.9;
 }
 
-/* Lightbox Overlay */
+/* ===== Lightbox Overlay ===== */
 .cv-lightbox {
   display: none;
   position: fixed;
@@ -70,12 +71,12 @@
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
-/* Buttons */
-.cv-lightbox .close-btn,
-.back-button {
+/* ===== Buttons ===== */
+.back-button,
+.cv-lightbox .close-btn {
   position: absolute;
   background: rgba(0,0,0,0.6);
   color: #fff;
@@ -89,8 +90,8 @@
   z-index: 2100;
 }
 
-.cv-lightbox .close-btn:hover,
-.back-button:hover {
+.back-button:hover,
+.cv-lightbox .close-btn:hover {
   background: rgba(0,0,0,0.8);
 }
 
@@ -103,6 +104,29 @@
   top: 20px;
   right: 20px;
 }
+
+/* ===== Lightbox Arrows ===== */
+.cv-lightbox .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 2100;
+  transition: background 0.3s ease;
+}
+
+.cv-lightbox .arrow:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.cv-lightbox .prev { left: 20px; }
+.cv-lightbox .next { right: 20px; }
 </style>
 </head>
 <body>
@@ -114,44 +138,68 @@
   <div class="cv-grid">
     <!-- Page 1 -->
     <div class="cv-page">
-      <a href="#" data-page="0">
-        <img src="images/cv-page1.jpg" alt="CV Page 1">
-      </a>
+      <img src="images/cv-page1.jpg" alt="CV Page 1" data-index="0">
     </div>
     <!-- Page 2 -->
     <div class="cv-page">
-      <a href="#" data-page="1">
-        <img src="images/cv-page2.jpg" alt="CV Page 2">
-      </a>
+      <img src="images/cv-page2.jpg" alt="CV Page 2" data-index="1">
     </div>
   </div>
 </div>
 
+<!-- Lightbox -->
 <div class="cv-lightbox">
   <span class="close-btn">✕</span>
+  <span class="arrow prev">‹</span>
   <img src="" alt="CV Full Page" class="lightbox-img">
+  <span class="arrow next">›</span>
 </div>
 
 <script>
 const lightbox = document.querySelector('.cv-lightbox');
 const lightboxImg = document.querySelector('.lightbox-img');
 const closeBtn = document.querySelector('.close-btn');
-const cvPages = document.querySelectorAll('.cv-grid a img');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const cvPages = document.querySelectorAll('.cv-grid img');
+
+let currentIndex = 0;
 
 // Open lightbox
 cvPages.forEach((img, index) => {
-  img.parentElement.addEventListener('click', (e) => {
-    e.preventDefault();
-    lightboxImg.src = cvPages[index].src;
+  img.addEventListener('click', () => {
+    currentIndex = index;
+    lightboxImg.src = cvPages[currentIndex].src;
     lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // disable body scroll
+    document.body.style.overflow = 'hidden';
   });
 });
 
 // Close lightbox
 closeBtn.addEventListener('click', () => {
   lightbox.style.display = 'none';
-  document.body.style.overflow = 'auto'; // re-enable body scroll
+  document.body.style.overflow = 'auto';
+});
+
+// Navigate previous
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + cvPages.length) % cvPages.length;
+  lightboxImg.src = cvPages[currentIndex].src;
+});
+
+// Navigate next
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % cvPages.length;
+  lightboxImg.src = cvPages[currentIndex].src;
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (lightbox.style.display === 'flex') {
+    if (e.key === 'ArrowLeft') prevBtn.click();
+    if (e.key === 'ArrowRight') nextBtn.click();
+    if (e.key === 'Escape') closeBtn.click();
+  }
 });
 </script>
 
