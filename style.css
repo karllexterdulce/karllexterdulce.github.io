@@ -924,17 +924,21 @@ footer {
 
 .project-images-container {
   display: flex;
-  overflow-x: auto; /* scrollable horizontally */
-  gap: 20px;
   width: 90%;
-  scroll-behavior: smooth;
+  height: 85%;
+  overflow: hidden; /* no scrollbar */
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease; /* smooth slide animation */
 }
 
 .project-images-container img {
+  width: 100%;
   max-width: 80vw;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 12px;
+  transition: transform 0.6s ease;
 }
 
 .project-lightbox .arrow {
