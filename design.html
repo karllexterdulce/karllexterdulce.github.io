@@ -62,32 +62,6 @@
       background: rgba(255, 255, 255, 0.25);
     }
 
-    /* Gallery Grid */
-    .gallery-container {
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      width: 100%;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 12px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
-
     /* ===== PROJECT THUMBNAILS ===== */
     .project {
       text-align: center;
@@ -105,49 +79,26 @@
       transform: scale(1.05);
     }
 
-    /* ===== LIGHTBOX (ARTWORK) ===== */
-    .art-lightbox {
+    /* ===== PROJECT LIGHTBOX ===== */
+    .project-lightbox {
       display: none;
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.95);
+      z-index: 1100;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
       flex-direction: column;
     }
 
-    .art-lightbox img {
+    .project-lightbox img {
       max-width: 90%;
       max-height: 80%;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      transition: opacity 0.3s ease;
     }
 
-    .lightbox-desc {
-      text-align: center;
-      max-width: 600px;
-    }
-
-    .lightbox-desc h3 {
-      margin-bottom: 10px;
-    }
-
-    .lightbox-desc p {
-      font-size: 0.95rem;
-      opacity: 0.8;
-    }
-
-    .art-close {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #fff;
-    }
-
-    .prev-btn, .next-btn {
+    .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -155,18 +106,20 @@
       color: #fff;
       cursor: pointer;
       user-select: none;
+      font-weight: bold;
     }
 
-    .prev-btn { left: 40px; }
-    .next-btn { right: 40px; }
+    .arrow.prev { left: 40px; }
+    .arrow.next { right: 40px; }
 
-    <!-- ===== PROJECT LIGHTBOX ===== -->
-<div class="project-lightbox">
-  <span class="project-close">✕</span>
-  <img src="" alt="Project Page" class="project-image">
-  <span class="arrow prev">‹</span>
-  <span class="arrow next">›</span>
-</div>
+    .project-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #fff;
+    }
 
     /* ===== FOOTER ===== */
     footer {
@@ -195,22 +148,10 @@
     <h3>Project 1</h3>
   </section>
 
-  <!-- ===== ART LIGHTBOX ===== -->
-  <div class="art-lightbox">
-    <img src="" alt="Artwork Full View" class="lightbox-img">
-    <div class="lightbox-desc">
-      <h3>Artwork Title</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo ipsum sed mi luctus.</p>
-    </div>
-    <span class="art-close">✕</span>
-    <span class="prev-btn">←</span>
-    <span class="next-btn">→</span>
-  </div>
-
   <!-- ===== PROJECT LIGHTBOX ===== -->
   <div class="project-lightbox">
     <span class="project-close">✕</span>
-    <div class="project-images-container"></div>
+    <img src="" alt="Project Page" class="project-image">
     <span class="arrow prev">‹</span>
     <span class="arrow next">›</span>
   </div>
@@ -222,60 +163,59 @@
 
   <script>
     /* ===== PROJECT LIGHTBOX ===== */
-const projectLightbox = document.querySelector('.project-lightbox');
-const projectImage = document.querySelector('.project-image');
-const projectCloseBtn = document.querySelector('.project-close');
-const projectPrev = document.querySelector('.arrow.prev');
-const projectNext = document.querySelector('.arrow.next');
+    const projectLightbox = document.querySelector('.project-lightbox');
+    const projectImage = document.querySelector('.project-image');
+    const projectCloseBtn = document.querySelector('.project-close');
+    const projectPrev = document.querySelector('.arrow.prev');
+    const projectNext = document.querySelector('.arrow.next');
 
-let currentProjectImages = [];
-let currentProjectIndex = 0;
+    let currentProjectImages = [];
+    let currentProjectIndex = 0;
 
-document.querySelectorAll('.project-thumb').forEach((thumb) => {
-  thumb.addEventListener('click', () => {
-    currentProjectImages = JSON.parse(thumb.dataset.pages);
-    currentProjectIndex = 0;
-    openProjectLightbox();
-  });
-});
+    document.querySelectorAll('.project-thumb').forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        currentProjectImages = JSON.parse(thumb.dataset.pages);
+        currentProjectIndex = 0;
+        openProjectLightbox();
+      });
+    });
 
-function openProjectLightbox() {
-  projectLightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  updateProjectImage();
-}
+    function openProjectLightbox() {
+      projectLightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      updateProjectImage();
+    }
 
-function closeProjectLightbox() {
-  projectLightbox.style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
+    function closeProjectLightbox() {
+      projectLightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
 
-function updateProjectImage() {
-  projectImage.style.opacity = 0;
-  setTimeout(() => {
-    projectImage.src = currentProjectImages[currentProjectIndex];
-    projectImage.onload = () => (projectImage.style.opacity = 1);
-  }, 150);
-}
+    function updateProjectImage() {
+      projectImage.style.opacity = 0;
+      setTimeout(() => {
+        projectImage.src = currentProjectImages[currentProjectIndex];
+        projectImage.onload = () => (projectImage.style.opacity = 1);
+      }, 150);
+    }
 
-projectPrev.addEventListener('click', () => {
-  currentProjectIndex = (currentProjectIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
-  updateProjectImage();
-});
+    projectPrev.addEventListener('click', () => {
+      currentProjectIndex = (currentProjectIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+      updateProjectImage();
+    });
 
-projectNext.addEventListener('click', () => {
-  currentProjectIndex = (currentProjectIndex + 1) % currentProjectImages.length;
-  updateProjectImage();
-});
+    projectNext.addEventListener('click', () => {
+      currentProjectIndex = (currentProjectIndex + 1) % currentProjectImages.length;
+      updateProjectImage();
+    });
 
-projectCloseBtn.addEventListener('click', closeProjectLightbox);
+    projectCloseBtn.addEventListener('click', closeProjectLightbox);
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeProjectLightbox();
-  if (e.key === 'ArrowRight') projectNext.click();
-  if (e.key === 'ArrowLeft') projectPrev.click();
-});
-
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeProjectLightbox();
+      if (e.key === 'ArrowRight') projectNext.click();
+      if (e.key === 'ArrowLeft') projectPrev.click();
+    });
   </script>
 </body>
 </html>
