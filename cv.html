@@ -131,7 +131,18 @@
 </head>
 <body>
 
+<!-- Back to Home -->
 <a href="index.html" class="back-button">Back to Home</a>
+
+<!-- Lightbox -->
+<div class="cv-lightbox">
+  <!-- Top-right close/back button -->
+  <span class="top-right-btn">✕</span>
+
+  <span class="arrow prev">‹</span>
+  <img src="" alt="CV Full Page" class="lightbox-img">
+  <span class="arrow next">›</span>
+</div>
 
 <div class="cv-container">
   <h2 class="cv-title">Curriculum Vitae</h2>
@@ -162,6 +173,12 @@ const closeBtn = document.querySelector('.close-btn');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const cvPages = document.querySelectorAll('.cv-grid img');
+const topRightBtn = document.querySelector('.top-right-btn');
+
+topRightBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+  document.body.style.overflow = 'auto';
+});
 
 let currentIndex = 0;
 
