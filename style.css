@@ -888,3 +888,23 @@ footer {
 .cv-lightbox .next {
   right: 20px;
 }
+
+/* Top-right button inside lightbox */
+.cv-lightbox .top-right-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 2100;
+}
+
+.cv-lightbox .top-right-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
