@@ -20,7 +20,6 @@
     .design-header {
       position: relative;
       height: 22vh;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -55,6 +54,8 @@
       padding: 8px 16px;
       border-radius: 8px;
       transition: background 0.3s ease;
+      width: auto;
+      display: inline-block;
     }
 
     .back-button:hover {
@@ -169,6 +170,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      overflow: hidden;
     }
 
     .project-close {
@@ -182,18 +184,21 @@
 
     .project-images-container {
       display: flex;
-      overflow-x: scroll;
-      scroll-behavior: smooth;
       width: 90%;
       height: 85%;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.6s ease;
     }
 
     .project-images-container img {
       width: 100%;
+      max-width: 80vw;
       object-fit: contain;
       flex-shrink: 0;
-      margin-right: 10px;
       border-radius: 12px;
+      transition: transform 0.6s ease;
     }
 
     .arrow {
@@ -260,9 +265,7 @@
   <!-- ===== PROJECT LIGHTBOX ===== -->
   <div class="project-lightbox">
     <span class="project-close">✕</span>
-    <div class="project-images-container">
-      <!-- JS will insert images here -->
-    </div>
+    <div class="project-images-container"></div>
     <span class="arrow prev">‹</span>
     <span class="arrow next">›</span>
   </div>
@@ -343,22 +346,28 @@
         });
         projectLightbox.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        updateProjectView();
       });
+    });
+
+    function updateProjectView() {
+      const offset = -currentProjectIndex * 100;
+      projectImagesContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    projectPrev.addEventListener('click', () => {
+      currentProjectIndex = (currentProjectIndex - 1 + currentImages.length) % currentImages.length;
+      updateProjectView();
+    });
+
+    projectNext.addEventListener('click', () => {
+      currentProjectIndex = (currentProjectIndex + 1) % currentImages.length;
+      updateProjectView();
     });
 
     projectCloseBtn.addEventListener('click', () => {
       projectLightbox.style.display = 'none';
       document.body.style.overflow = 'auto';
-    });
-
-    projectPrev.addEventListener('click', () => {
-      currentProjectIndex = Math.max(0, currentProjectIndex - 1);
-      projectImagesContainer.scrollLeft = currentProjectIndex * projectImagesContainer.clientWidth;
-    });
-
-    projectNext.addEventListener('click', () => {
-      currentProjectIndex = Math.min(currentImages.length - 1, currentProjectIndex + 1);
-      projectImagesContainer.scrollLeft = currentProjectIndex * projectImagesContainer.clientWidth;
     });
   </script>
 </body>
