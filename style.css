@@ -908,3 +908,58 @@ footer {
 .cv-lightbox .top-right-btn:hover {
   background: rgba(0,0,0,0.8);
 }
+
+.project-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2000;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.project-images-container {
+  display: flex;
+  overflow-x: auto; /* scrollable horizontally */
+  gap: 20px;
+  width: 90%;
+  scroll-behavior: smooth;
+}
+
+.project-images-container img {
+  max-width: 80vw;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.project-lightbox .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.project-lightbox .prev { left: 20px; }
+.project-lightbox .next { right: 20px; }
+.project-lightbox .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+}
