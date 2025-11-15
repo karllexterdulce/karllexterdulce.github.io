@@ -452,13 +452,15 @@ header::before {
 
 .project-card {
   position: relative;
+  border: 1px solid #444;
   padding: 20px;
-  display: flex;              /* makes it a flex container */
-  flex-direction: column;     /* stack children vertically */
-  justify-content: flex-end;  /* pushes text to bottom */
-  align-items: center;        /* centers text horizontally */
-  text-decoration: none;
+  border-radius: 10px;
   color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
 }
