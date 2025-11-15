@@ -1135,3 +1135,21 @@ footer {
 .project-links p {
   text-align: center;
 }
+
+/* CV Section Responsive Fix */
+@media (max-width: 768px) {
+  .cv-grid {
+    flex-direction: column; /* stack pages vertically */
+    overflow-x: hidden;     /* no horizontal scroll */
+  }
+
+  .cv-page {
+    width: 90vw;            /* almost full width of mobile screen */
+    margin-bottom: 20px;    /* spacing between pages */
+  }
+
+  .cv-lightbox img {
+    max-width: 95vw;        /* make full width for mobile */
+    height: auto;
+  }
+}
