@@ -190,12 +190,13 @@
 </section>
 
   <!-- ===== PROJECT LIGHTBOX ===== -->
-  <div class="project-lightbox">
-    <span class="project-close">✕</span>
-    <img src="" alt="Project Page" class="project-image">
-    <span class="arrow prev">‹</span>
-    <span class="arrow next">›</span>
-  </div>
+<div class="project-lightbox">
+  <span class="project-close">✕</span>
+  <img src="" alt="Project Page" class="project-image">
+  <div class="project-links"></div> <!-- NEW: links appear here -->
+  <span class="arrow prev">‹</span>
+  <span class="arrow next">›</span>
+</div>
 
   <!-- Footer -->
   <footer>
@@ -257,6 +258,31 @@
       if (e.key === 'ArrowRight') projectNext.click();
       if (e.key === 'ArrowLeft') projectPrev.click();
     });
+    const projectLinksContainer = document.querySelector('.project-links');
+
+document.querySelectorAll('.project-thumb').forEach((thumb) => {
+  thumb.addEventListener('click', () => {
+    currentProjectImages = JSON.parse(thumb.dataset.pages);
+    currentProjectIndex = 0;
+    
+    // Get links for this project
+    const links = JSON.parse(thumb.dataset.links || '[]');
+    projectLinksContainer.innerHTML = ''; // clear previous links
+
+    if (links.length > 0) {
+      const linkParagraph = document.createElement('p');
+      linkParagraph.style.marginTop = '15px';
+      linkParagraph.style.fontSize = '1rem';
+      linkParagraph.style.color = '#fff';
+      linkParagraph.innerHTML = 'Learn more about this project: ' + 
+        links.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer" style="color:#00bfff; font-weight:bold; text-decoration:none; margin-left:5px; margin-right:5px;">${link.text}</a>`).join('|');
+      
+      projectLinksContainer.appendChild(linkParagraph);
+    }
+
+    openProjectLightbox();
+  });
+});
   </script>
 </body>
 </html>
