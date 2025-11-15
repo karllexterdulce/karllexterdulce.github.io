@@ -976,3 +976,12 @@ footer {
 .back-button:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
+.project {
+  display: flex;           /* Arrange children side by side */
+  gap: 20px;               /* Space between the items */
+}
+
+.project-item {
+  text-align: center;      /* Center the image and heading */
+}
