@@ -978,10 +978,12 @@ footer {
 }
 
 .project {
-  display: flex;           /* Arrange children side by side */
-  gap: 20px;               /* Space between the items */
+  display: flex;            /* Arrange children side by side */
+  gap: 20px;                /* Space between the items */
+  justify-content: center;  /* Center the items horizontally */
+  flex-wrap: wrap;          /* Allows wrapping on smaller screens */
 }
 
 .project-item {
-  text-align: center;      /* Center the image and heading */
+  text-align: center;       /* Center image and heading within each item */
 }
