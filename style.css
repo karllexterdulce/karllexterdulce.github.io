@@ -994,3 +994,10 @@ footer {
   object-fit: cover;        /* Make sure image covers the box without stretching */
   border-radius: 8px;       /* Optional: rounded corners for a nicer look */
 }
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+.project-links p {
+  text-align: center;
+}
