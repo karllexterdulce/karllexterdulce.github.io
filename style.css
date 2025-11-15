@@ -238,34 +238,168 @@ header::before {
   text-align: left;
 }
 
-/* ===== Mobile ===== */
+/* ===== MOBILE OPTIMIZATION ===== */
+
+/* Tablets and small screens */
 @media (max-width: 768px) {
-  .banner-text h1 { font-size: 32px; }
-  .banner-text h2 { font-size: 18px; }
+
+  /* Header text */
+  .banner-text h1, 
+  .writing-header h1,
+  .design-header h1,
+  .gallery-header h1 {
+    font-size: 32px;
+  }
+
+  .banner-text h2,
+  .writing-header h2,
+  .design-header h2,
+  .gallery-header p {
+    font-size: 18px;
+  }
+
+  /* About section */
   .about-container {
     flex-direction: column;
     align-items: center;
-    text-align: left;
+    text-align: center;
   }
+
   .about-photo {
     width: 230px;
     height: 230px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0 20px 0;
+    margin: 30px 0;
   }
+
   .about-photo img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
   }
+
   .about-text {
-    flex: none;
     width: 100%;
     max-width: 500px;
+  }
+
+  /* Writing cards */
+  .writing-card {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+
+  .writing-card img {
+    width: 90%;
+    height: auto;
+  }
+
+  .writing-text {
+    width: 100%;
+  }
+
+  /* Projects grid */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  /* CV pages */
+  .cv-page {
+    width: 70vw;
+  }
+
+  /* Gallery grid */
+  .gallery-grid {
+    gap: 15px;
+  }
+
+  .gallery-container {
+    padding: 20px 10px;
+  }
+
+  /* Back buttons */
+  .back-button {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  /* Header text smaller */
+  .banner-text h1, 
+  .writing-header h1,
+  .design-header h1,
+  .gallery-header h1 {
+    font-size: 28px;
+  }
+
+  .banner-text h2,
+  .writing-header h2,
+  .design-header h2,
+  .gallery-header p {
+    font-size: 16px;
+  }
+
+  /* Writing cards smaller spacing */
+  .writing-card {
+    gap: 15px;
+  }
+
+  .writing-text h2 {
+    font-size: 24px;
+  }
+
+  .writing-text p {
+    font-size: 16px;
+  }
+
+  /* Projects cards */
+  .projects-grid .project-card h3 {
+    font-size: 18px;
+  }
+
+  .projects-grid .project-card p {
+    font-size: 12px;
+  }
+
+  /* CV pages */
+  .cv-page {
+    width: 90vw;
+  }
+
+  /* Back button adjustments */
+  .back-button {
+    top: 8px;
+    left: 8px;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  /* Footer text smaller */
+  footer {
+    font-size: 0.8em;
+    padding: 15px;
   }
 }
 
