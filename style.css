@@ -987,3 +987,10 @@ footer {
 .project-item {
   text-align: center;       /* Center image and heading within each item */
 }
+
+.project-thumb {
+  width: 300px;            /* Set a fixed width */
+  aspect-ratio: 16 / 9;    /* Force a rectangle ratio */
+  object-fit: cover;        /* Make sure image covers the box without stretching */
+  border-radius: 8px;       /* Optional: rounded corners for a nicer look */
+}
