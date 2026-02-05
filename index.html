@@ -144,34 +144,35 @@
         </nav>
     </header>
 
-    <!-- Hero Banner: KA [Photo] RL -->
+    <!-- Hero Section: KA(photo)RL -->
     <section id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-editorial-light">
+        <!-- Background -->
         <div class="absolute inset-0 z-0">
-            <img src="https://picsum.photos/1920/1080?random=1" alt="Minimalist abstract background" class="w-full h-full object-cover opacity-5">
+            <img src="https://picsum.photos/1920/1080?random=1" alt="Minimalist background" class="w-full h-full object-cover opacity-5">
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-editorial-light/90 to-editorial-light"></div>
         </div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
-                <!-- Left: Text & Name -->
-                <div class="lg:w-full flex flex-col items-center text-center">
-                    <!-- Split Name Around Portrait -->
-                    <div class="mb-6 flex items-center gap-6 lg:gap-12">
-                        <h1 class="font-lexend text-6xl md:text-8xl lg:text-9xl font-black leading-none">KA</h1>
 
-                        <div class="relative w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl animate-float">
-                            <img src="https://picsum.photos/300/300?random=2" alt="Portrait of Karl" class="w-full h-full object-cover">
-                        </div>
+        <!-- Hero Main -->
+        <div class="flex items-center justify-center gap-12 lg:gap-24 relative z-10">
+            <!-- KA -->
+            <h1 class="font-bricolage text-[10rem] md:text-[16rem] lg:text-[20rem] leading-none">KA</h1>
 
-                        <h1 class="font-lexend text-6xl md:text-8xl lg:text-9xl font-black leading-none">RL</h1>
-                    </div>
+            <!-- Portrait -->
+            <div class="relative w-48 md:w-64 lg:w-72 h-auto" style="transform: rotate(2deg);">
+                <img src="https://picsum.photos/500/600?random=2" alt="Portrait of Karl" class="w-full h-auto object-cover">
+            </div>
 
-                    <!-- Subtitle -->
-                    <div class="typewriter inline-block">
-                        <p class="font-lexend text-xl md:text-2xl text-editorial-gray font-light">
-                            English Language Studies • Creative Artist • Digital Designer
-                        </p>
-                    </div>
+            <!-- RL -->
+            <h1 class="font-bricolage text-[10rem] md:text-[16rem] lg:text-[20rem] leading-none">RL</h1>
+        </div>
+
+        <!-- Subtitle -->
+        <div class="absolute bottom-24 w-full text-center z-10">
+            <p class="typewriter font-lexend text-sm md:text-lg text-editorial-gray font-light">
+                English Language Studies • Creative Artist • Digital Designer
+            </p>
+        </div>
+    </section>
 
                     <!-- CTA Buttons -->
                     <div class="mt-12 flex flex-wrap gap-4 justify-center">
