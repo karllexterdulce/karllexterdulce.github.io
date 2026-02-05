@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karl's Portfolio | Editorial Cyber Minimalist Design</title>
     <meta name="description" content="Professional portfolio of Karl - English Language Studies student, artist, and creative professional with expertise in writing, design, and digital art.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
     <!-- Google Fonts: Lexend -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -55,10 +61,9 @@
             }
         }
     </script>
+    
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         body {
             background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #f0f0f0 100%);
             background-attachment: fixed;
@@ -74,9 +79,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.08);
         }
-        .text-glow {
-            text-shadow: 0 0 10px rgba(58, 134, 255, 0.3);
-        }
+        .text-glow { text-shadow: 0 0 10px rgba(58, 134, 255, 0.3); }
         .gradient-text {
             background: linear-gradient(90deg, #121212, #2d2d2d);
             -webkit-background-clip: text;
@@ -99,32 +102,21 @@
             background: linear-gradient(90deg, #121212, #2d2d2d);
             transition: width 0.3s ease;
         }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .project-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
+        .nav-link:hover::after { width: 100%; }
+        .project-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .project-card:hover { transform: translateY(-10px) scale(1.02); }
         .typewriter {
             overflow: hidden;
             border-right: 2px solid #2d2d2d;
             white-space: nowrap;
             animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #2d2d2d }
-        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #2d2d2d } }
     </style>
 </head>
 <body class="min-h-screen text-editorial-black font-lexend overflow-x-hidden">
+
     <!-- Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50">
         <nav class="glass-panel py-4 px-6">
@@ -144,25 +136,18 @@
         </nav>
     </header>
 
-    <!-- Hero Banner: KA [Photo] RL -->
+    <!-- Hero Section -->
     <section id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-editorial-light">
-        <div class="absolute inset-0 z-0">
-            <img src="images/karl_pogi.jpg" alt="Portrait of Karl" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-editorial-light/90 to-editorial-light"></div>
-        </div>
-        
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
-                <!-- Left: Text & Name -->
                 <div class="lg:w-full flex flex-col items-center text-center">
-                    <!-- Split Name Around Portrait -->
+                    <!-- Name split around photo -->
                     <div class="mb-6 flex items-center gap-6 lg:gap-12">
                         <h1 class="font-lexend text-6xl md:text-8xl lg:text-9xl font-black leading-none">KA</h1>
-
-                        <div class="relative w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl animate-float">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-accent-blue to-accent-cyan rounded-2xl blur-lg opacity-30"></div>
                             <img src="images/karl_pogi.jpg" alt="Portrait of Karl" class="relative w-full h-auto rounded-2xl object-cover shadow-2xl">
                         </div>
-
                         <h1 class="font-lexend text-6xl md:text-8xl lg:text-9xl font-black leading-none">RL</h1>
                     </div>
 
@@ -202,13 +187,13 @@
                 <h2 class="font-orbitron text-4xl md:text-5xl font-bold mb-4 gradient-text">ABOUT ME</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-accent-blue to-accent-cyan mx-auto rounded-full"></div>
             </div>
-            
+
             <div class="glass-panel rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <div class="lg:w-2/5">
                         <div class="relative">
                             <div class="absolute -inset-4 bg-gradient-to-r from-accent-blue to-accent-cyan rounded-2xl blur-lg opacity-30"></div>
-                            <img src="https://picsum.photos/400/500?random=3" alt="Portrait of Karl" class="relative w-full h-auto rounded-2xl object-cover shadow-2xl">
+                            <img src="images/karl_pogi.jpg" alt="Portrait of Karl" class="relative w-full h-auto rounded-2xl object-cover shadow-2xl">
                         </div>
                         <div class="mt-8 grid grid-cols-3 gap-4">
                             <div class="glass-card rounded-lg p-4 text-center">
@@ -225,19 +210,16 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="lg:w-3/5">
                         <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-6 text-editorial-black">Creative Mind • Analytical Thinker • Team Leader</h3>
-                        
                         <div class="space-y-6">
                             <p class="text-gray-700 leading-relaxed">
                                 I am a third-year college student majoring in <span class="text-accent-cyan font-medium">English Language Studies</span>. Ever since grade school, I've had a deep passion for the arts, whether it's writing, drawing (digital or traditional), or editing photos and videos. Even though these are my creative pursuits, I am also eager to explore new horizons in other fields.
                             </p>
-                            
                             <p class="text-gray-700 leading-relaxed">
                                 My strengths include <span class="text-accent-cyan font-medium">brainstorming, analyzing, and collaborating</span> with a team. I have consistently shown my leadership skills since my elementary years, and alongside these skills, I remain committed to my academics. In senior high school, I graduated with high honors, and in college, I have been a consistent President's Lister where I maintained a GWA of 1.11 in my sophomore year.
                             </p>
-                            
                             <div class="glass-card rounded-xl p-6 mt-8">
                                 <div class="flex items-start">
                                     <div class="text-accent-blue text-2xl mr-4">
@@ -266,7 +248,7 @@
             <div class="text-center mb-16">
                 <h2 class="font-orbitron text-4xl md:text-5xl font-bold mb-4 gradient-text">MY PROJECTS</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Explore my creative works across different disciplines</p>
-                <div class="w-24 h-1 bg-gradient-to-r from-accent-blue to-accent-cyan mx-auto rounded-full mt-6"></div>
+                <div class="w-24 h-1 bg-gradient-to-r from-accent-blue to-accent-cyan mx-auto mt-6 rounded-full"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -286,7 +268,7 @@
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-br from-accent-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </a>
-                
+
                 <!-- Artwork Card -->
                 <a href="artworks.html" class="project-card glass-card rounded-2xl p-8 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-accent-cyan/10 rounded-full -translate-y-16 translate-x-16"></div>
@@ -303,9 +285,26 @@
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </a>
-                
+
                 <!-- Designs Card -->
                 <a href="design.html" class="project-card glass-card rounded-2xl p-8 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-accent-blue/10 rounded-full -translate-y-16 translate-x-16"></div>
                     <div class="relative z-10">
-                        <div class="text-4xl text-accent
+                        <div class="text-4xl text-accent-blue mb-6">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="font-orbitron text-2xl font-bold mb-4">DESIGN</h3>
+                        <p class="text-gray-700 mb-6">Digital and editorial designs demonstrating my aesthetic sensibility and technical abilities.</p>
+                        <div class="flex items-center text-accent-cyan font-medium">
+                            <span>See Designs</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
