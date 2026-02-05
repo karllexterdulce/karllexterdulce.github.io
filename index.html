@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karl's Portfolio | Brutalist Editorial</title>
+    <title>Karl's Portfolio | Editorial Cyber Minimalist Design</title>
     <meta name="description" content="Professional portfolio of Karl - English Language Studies student, artist, and creative professional with expertise in writing, design, and digital art.">
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Google Fonts: Lexend & Bricolage Grotesque -->
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;700&display=swap" rel="stylesheet">
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -22,10 +21,23 @@
                         'editorial-light': '#f8f8f8',
                         'accent-blue': '#3a86ff',
                         'accent-cyan': '#00bbf9',
+                        'glass-dark': 'rgba(18, 18, 18, 0.7)',
+                        'glass-light': 'rgba(45, 45, 45, 0.5)',
+                        'cyber-dark': '#0a0f19',
+                        'cyber-darker': '#050811',
                     },
                     fontFamily: {
                         'lexend': ['Lexend', 'sans-serif'],
-                        'bricolage': ['Bricolage Grotesque', 'sans-serif'],
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'bricolage': ['"Bricolage Grotesque"', 'sans-serif'],
+                    },
+                    backdropBlur: {
+                        'glass': '12px',
+                    },
+                    boxShadow: {
+                        'editorial': '0 8px 32px rgba(0, 0, 0, 0.1)',
+                        'editorial-strong': '0 12px 48px rgba(0, 0, 0, 0.15)',
+                        'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
                     },
                     animation: {
                         'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
@@ -45,61 +57,222 @@
             }
         }
     </script>
-
     <style>
         html { scroll-behavior: smooth; }
         body {
-            background: #f8f8f8;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #f0f0f0 100%);
+            background-attachment: fixed;
             color: #121212;
         }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .text-glow { text-shadow: 0 0 10px rgba(58, 134, 255, 0.3); }
+        .gradient-text {
+            background: linear-gradient(90deg, #121212, #2d2d2d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-border {
+            position: relative;
+            border: 2px solid transparent;
+            background: linear-gradient(#ffffff, #ffffff) padding-box,
+                        linear-gradient(90deg, #121212, #2d2d2d) border-box;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, #121212, #2d2d2d);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .project-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .project-card:hover { transform: translateY(-10px) scale(1.02); }
         .typewriter {
             overflow: hidden;
-            border-right: 2px solid #121212;
+            border-right: 2px solid #2d2d2d;
             white-space: nowrap;
-            animation: typing 3.5s steps(40,end), blink-caret 0.75s step-end infinite;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
         @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink-caret { from,to { border-color: transparent } 50% { border-color: #121212 } }
-        .cta-left { position: absolute; top: 2rem; left: 2rem; display: flex; gap: 1rem; }
-        .cta-left a { padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-family: 'Lexend', sans-serif; transition: all 0.3s; }
-        .cta-left a:hover { opacity: 0.85; }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #2d2d2d } }
     </style>
 </head>
-<body class="min-h-screen overflow-x-hidden">
+<body class="min-h-screen text-editorial-black font-lexend overflow-x-hidden">
 
-    <!-- Hero Section -->
-    <section id="top" class="relative min-h-screen flex items-center justify-center bg-editorial-light">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <nav class="glass-panel py-4 px-6">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-3 h-3 rounded-full bg-editorial-black animate-pulse-subtle"></div>
+                    <h1 class="font-lexend text-xl font-bold text-editorial-black tracking-tight">KARL DULCE</h1>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#top" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">HOME</a>
+                    <a href="#about" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">ABOUT</a>
+                    <a href="#projects" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">PROJECTS</a>
+                    <a href="cv.html" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">CV</a>
+                    <a href="#contact" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">CONTACT</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <!-- CTAs Top-Left -->
-        <div class="cta-left">
-            <a href="#projects" class="bg-accent-blue text-white font-medium">EXPLORE WORKS</a>
-            <a href="#contact" class="border border-editorial-black text-editorial-black font-medium">CONNECT WITH ME</a>
+    <!-- Hero Section: KA(photo)RL -->
+    <section id="top" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-editorial-light">
+        <!-- Background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/1920/1080?random=1" alt="Minimalist background" class="w-full h-full object-cover opacity-5">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-editorial-light/90 to-editorial-light"></div>
+        </div>
+
+        <!-- Top-left CTA Buttons -->
+        <div class="absolute top-8 left-8 z-20 flex flex-col gap-4">
+            <a href="#projects" class="px-6 py-3 bg-accent-blue text-white font-lexend font-medium rounded-md hover:opacity-90 transition-opacity duration-300">
+                EXPLORE WORKS
+            </a>
+            <a href="#contact" class="px-6 py-3 border border-editorial-black text-editorial-black font-lexend font-medium rounded-md hover:opacity-90 transition-opacity duration-300">
+                CONNECT WITH ME
+            </a>
         </div>
 
         <!-- Hero Main -->
-        <div class="flex items-center justify-center gap-8 lg:gap-16 z-10">
-
+        <div class="flex items-center justify-center gap-12 lg:gap-24 relative z-10">
             <!-- KA -->
-            <h1 class="font-bricolage text-[12rem] md:text-[18rem] lg:text-[22rem] leading-none">KA</h1>
+            <h1 class="font-bricolage text-[10rem] md:text-[16rem] lg:text-[20rem] leading-none">KA</h1>
 
-            <!-- Photo -->
+            <!-- Portrait -->
             <div class="relative w-48 md:w-64 lg:w-72 h-auto" style="transform: rotate(2deg);">
-                <img src="images/karl_pogi.jpg" alt="Karl Portrait" class="w-full h-auto object-cover" style="border-radius: 0;">
+                <img src="https://picsum.photos/500/600?random=2" alt="Portrait of Karl" class="w-full h-auto object-cover">
             </div>
 
             <!-- RL -->
-            <h1 class="font-bricolage text-[12rem] md:text-[18rem] lg:text-[22rem] leading-none">RL</h1>
-
+            <h1 class="font-bricolage text-[10rem] md:text-[16rem] lg:text-[20rem] leading-none">RL</h1>
         </div>
 
         <!-- Subtitle -->
-        <div class="absolute bottom-24 text-center w-full">
-            <p class="typewriter text-sm md:text-lg font-lexend">
+        <div class="absolute bottom-24 w-full text-center z-10">
+            <p class="typewriter font-lexend text-sm md:text-lg text-editorial-gray font-light">
                 English Language Studies • Creative Artist • Digital Designer
             </p>
         </div>
-
     </section>
 
-</body>
-</html>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-orbitron text-4xl md:text-5xl font-bold mb-4 gradient-text">ABOUT ME</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-accent-blue to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+            <div class="glass-panel rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-2/5">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-accent-blue to-accent-cyan rounded-2xl blur-lg opacity-30"></div>
+                            <img src="https://picsum.photos/400/500?random=3" alt="Portrait of Karl" class="relative w-full h-auto rounded-2xl object-cover shadow-2xl">
+                        </div>
+                        <div class="mt-8 grid grid-cols-3 gap-4">
+                            <div class="glass-card rounded-lg p-4 text-center">
+                                <div class="text-2xl font-orbitron text-accent-blue">3rd</div>
+                                <div class="text-sm text-gray-600">Year College</div>
+                            </div>
+                            <div class="glass-card rounded-lg p-4 text-center">
+                                <div class="text-2xl font-orbitron text-accent-cyan">1.11</div>
+                                <div class="text-sm text-gray-600">GWA</div>
+                            </div>
+                            <div class="glass-card rounded-lg p-4 text-center">
+                                <div class="text-2xl font-orbitron text-accent-blue">ELS</div>
+                                <div class="text-sm text-gray-600">Major</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-3/5">
+                        <h3 class="font-orbitron text-2xl md:text-3xl font-bold mb-6 text-editorial-black">Creative Mind • Analytical Thinker • Team Leader</h3>
+                        <div class="space-y-6">
+                            <p class="text-gray-700 leading-relaxed">
+                                I am a third-year college student majoring in <span class="text-accent-cyan font-medium">English Language Studies</span>. Ever since grade school, I've had a deep passion for the arts, whether it's writing, drawing (digital or traditional), or editing photos and videos. Even though these are my creative pursuits, I am also eager to explore new horizons in other fields.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">
+                                My strengths include <span class="text-accent-cyan font-medium">brainstorming, analyzing, and collaborating</span> with a team. I have consistently shown my leadership skills since my elementary years, and alongside these skills, I remain committed to my academics. In senior high school, I graduated with high honors, and in college, I have been a consistent President's Lister where I maintained a GWA of 1.11 in my sophomore year.
+                            </p>
+                            <div class="glass-card rounded-xl p-6 mt-8">
+                                <div class="flex items-start">
+                                    <div class="text-accent-blue text-2xl mr-4">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-orbitron text-xl font-bold mb-2">Complete Profile</h4>
+                                        <p class="text-gray-700 mb-4">To see my full experiences and achievements, you can check out my detailed Curriculum Vitae.</p>
+                                        <a href="cv.html" class="inline-flex items-center text-accent-cyan font-medium hover:text-accent-blue transition-colors">
+                                            View Full CV
+                                            <i class="fas fa-arrow-right ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-editorial-light">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-orbitron text-4xl md:text-5xl font-bold mb-4 gradient-text">MY PROJECTS</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore my creative works across different disciplines</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-accent-blue to-accent-cyan mx-auto rounded-full mt-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Writing Card -->
+                <a href="writing.html" class="project-card glass-card rounded-2xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent-blue/10 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative z-10">
+                        <div class="text-4xl text-accent-blue mb-6">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h3 class="font-orbitron text-2xl font-bold mb-4">WRITING</h3>
+                        <p class="text-gray-700 mb-6">My written works: essays and poems that explore language, emotion, and human experience.</p>
+                        <div class="flex items-center text-accent-cyan font-medium">
+                            <span>Explore Collection</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </a>
+                <!-- Artwork Card -->
+                <a href="artworks.html" class="project-card glass-card rounded-2xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent-cyan/10 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative z-10">
+                        <div class="text-4xl text-accent-cyan mb-6">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="font-orbitron text-2xl font-bold mb-4">ARTWORK</h3>
+                        <p class="text-gray-700 mb-6">Drawings, both digital and traditional, showcasing my artistic vision and technical skill.</p>
+                        <div class="flex items-center text-accent-cyan font-medium">
+                            <span>View Gallery</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </a>
+                <!-- Designs Card -->
+                <a href="design.html" class="project-card glass-card rounded-2xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent-blue/10 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative z-10">
