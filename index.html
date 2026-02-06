@@ -22,35 +22,26 @@ tailwind.config = {
         'accent-blue': '#3a86ff',
         'accent-cyan': '#00bbf9',
       },
-
       fontFamily: {
         lexend: ['Lexend', 'sans-serif'],
-        orbitron: ['Orbitron', 'sans-serif'],
         bricolage: ['Bricolage Grotesque', 'sans-serif'],
       },
-
-                    backdropBlur: {
-                        'glass': '12px',
-                    },
-                    boxShadow: {
-                        'editorial': '0 8px 32px rgba(0, 0, 0, 0.1)',
-                        'editorial-strong': '0 12px 48px rgba(0, 0, 0, 0.15)',
-                        'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
-                    },
-                    animation: {
-                        'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'pulse-subtle': {
-                            '0%, 100%': { 'opacity': '0.7' },
-                            '50%': { 'opacity': '1' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-
+      animation: {
+        'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'slide-left': 'slideLeft 1s ease-out forwards',
+        'slide-right': 'slideRight 1s ease-out forwards',
+        'photo-in': 'photoIn 1.2s ease-out forwards',
+      },
       keyframes: {
+        pulseSubtle: {
+          '0%, 100%': { opacity: '0.7' },
+          '50%': { opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-12px)' },
+        },
         slideLeft: {
           '0%': { transform: 'translateX(-80px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
@@ -60,18 +51,15 @@ tailwind.config = {
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         photoIn: {
-          '0%': { transform: 'rotate(0deg) scale(0.95)', opacity: '0' },
-          '100%': { transform: 'rotate(2deg) scale(1)', opacity: '1' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },
     },
   },
 }
 </script>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -172,12 +160,12 @@ tailwind.config = {
     </h1>
 
     <div class="w-[22vw] max-w-[260px] opacity-0 animate-photo-in animate-float">
-      <img
-        src="images/karl_pogi1.jpg"
-        alt="Portrait of Karl"
-        class="w-full h-auto object-cover"
-      />
-    </div>
+  <img
+    src="images/karl_pogi1.jpg"
+    alt="Portrait of Karl"
+    class="w-full h-auto object-cover will-change-transform"
+  />
+</div>
 
     <h1 class="font-bricolage text-[18vw] leading-none font-extrabold opacity-0 animate-slide-right">
       RL
