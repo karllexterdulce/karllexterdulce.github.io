@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -41,37 +41,26 @@
 </header>
 
 <!-- HERO -->
-<section id="top" class="min-h-screen flex items-center pt-32">
-  <div class="max-w-7xl mx-auto px-10 w-full flex flex-col lg:flex-row items-center justify-between gap-20">
+<section id="top" class="min-h-screen flex items-center justify-center pt-32">
+  <div class="flex flex-col items-center">
 
-    <!-- TEXT -->
-    <div>
-      <p class="text-lg mb-4">Hi! I’m</p>
+    <!-- KA [PHOTO] RL -->
+    <div class="flex items-center gap-8 md:gap-12">
+      <h1 class="text-[20vw] md:text-[14vw] font-black leading-none">KA</h1>
 
-      <h1 class="text-[7rem] md:text-[9rem] font-extrabold leading-none tracking-tight">
-        KA<br>RL
-      </h1>
-
-      <div class="mt-10 flex gap-4">
-        <a href="#projects"
-           class="border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
-          Explore Works
-        </a>
-        <a href="#contact"
-           class="border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
-          Connect with me
-        </a>
-      </div>
-    </div>
-
-    <!-- IMAGE -->
-    <div class="relative">
       <img
-        src="YOUR_IMAGE.png"
+        src="images/karl_pogi.jpg"
         alt="Karl portrait"
-        class="w-[300px] md:w-[380px] rotate-[-4deg]"
+        class="w-32 h-32 md:w-44 md:h-44 object-cover rounded-full rotate-[-2deg]"
       />
+
+      <h1 class="text-[20vw] md:text-[14vw] font-black leading-none">RL</h1>
     </div>
+
+    <!-- Subtitle (small on purpose) -->
+    <p class="mt-8 text-xs md:text-sm tracking-wide text-gray-600 text-center">
+      English Language Studies • Creative Artist • Digital Designer
+    </p>
 
   </div>
 </section>
@@ -117,10 +106,7 @@
 <section id="contact" class="py-32">
   <div class="max-w-4xl mx-auto px-10">
     <h2 class="text-4xl font-bold mb-8">Contact</h2>
-
-    <p class="text-lg mb-6">
-      Want to collaborate or just say hi?
-    </p>
+    <p class="text-lg mb-6">Want to collaborate or just say hi?</p>
 
     <a href="mailto:karllexterdulce@gmail.com"
        class="inline-block border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
