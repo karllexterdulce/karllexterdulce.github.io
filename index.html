@@ -8,8 +8,8 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -17,6 +17,7 @@
         extend: {
           fontFamily: {
             lexend: ['Lexend', 'sans-serif'],
+            bricolage: ['Bricolage Grotesque', 'sans-serif'],
           },
         },
       },
@@ -24,99 +25,103 @@
   </script>
 </head>
 
-<body class="font-lexend bg-white text-black overflow-x-hidden">
+<body class="bg-white text-black overflow-x-hidden">
 
 <!-- NAV -->
-<header class="fixed top-0 left-0 right-0 bg-white z-50">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white">
   <nav class="max-w-7xl mx-auto px-10 py-6 flex justify-between items-center">
-    <h1 class="text-lg font-semibold">Karl Dulce</h1>
-    <div class="flex gap-8 text-sm font-medium">
-      <a href="#top" class="hover:underline">Home</a>
-      <a href="#about" class="hover:underline">About</a>
-      <a href="#projects" class="hover:underline">Projects</a>
-      <a href="cv.html" class="hover:underline">CV</a>
-      <a href="#contact" class="hover:underline">Contact</a>
+    <h1 class="font-lexend font-medium text-sm tracking-wide">Karl Dulce</h1>
+    <div class="flex gap-8 text-xs uppercase tracking-widest">
+      <a href="#about" class="hover:opacity-60">About</a>
+      <a href="#projects" class="hover:opacity-60">Projects</a>
+      <a href="#contact" class="hover:opacity-60">Contact</a>
     </div>
   </nav>
 </header>
 
 <!-- HERO -->
-<section id="top" class="min-h-screen flex items-center justify-center pt-32">
-  <div class="flex flex-col items-center">
+<section id="top" class="min-h-screen flex items-center justify-center relative pt-24">
 
-    <!-- KA [PHOTO] RL -->
-    <div class="flex items-center gap-8 md:gap-12">
-      <h1 class="text-[20vw] md:text-[14vw] font-black leading-none">KA</h1>
+  <!-- CTAs -->
+  <div class="absolute top-32 left-10 flex flex-col gap-4">
+    <a href="#projects" class="text-xs uppercase tracking-widest border border-black px-4 py-2 hover:bg-black hover:text-white transition">
+      Explore Works
+    </a>
+    <a href="#contact" class="text-xs uppercase tracking-widest border border-black px-4 py-2 hover:bg-black hover:text-white transition">
+      Connect With Me
+    </a>
+  </div>
 
+  <!-- KA PHOTO RL -->
+  <div class="flex items-center justify-center gap-10">
+
+    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold select-none">
+      KA
+    </h1>
+
+    <div class="w-[22vw] max-w-[260px] rotate-[2deg]">
       <img
         src="images/karl_pogi.jpg"
-        alt="Karl portrait"
-        class="w-32 h-32 md:w-44 md:h-44 object-cover rounded-full rotate-[-2deg]"
+        alt="Portrait of Karl"
+        class="w-full h-auto object-cover"
       />
-
-      <h1 class="text-[20vw] md:text-[14vw] font-black leading-none">RL</h1>
     </div>
 
-    <!-- Subtitle (small on purpose) -->
-    <p class="mt-8 text-xs md:text-sm tracking-wide text-gray-600 text-center">
-      English Language Studies • Creative Artist • Digital Designer
-    </p>
+    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold select-none">
+      RL
+    </h1>
 
   </div>
+
+  <!-- Subtitle -->
+  <p class="absolute bottom-24 text-[11px] tracking-widest uppercase text-center">
+    English Language Studies • Creative Artist • Digital Designer
+  </p>
+
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-32">
-  <div class="max-w-4xl mx-auto px-10">
-    <h2 class="text-4xl font-bold mb-8">About Me</h2>
-    <p class="text-lg leading-relaxed text-gray-700">
-      I am a third-year college student majoring in English Language Studies with
-      a deep passion for writing, visual art, and digital design. I enjoy working
-      at the intersection of creativity and analysis, whether through research,
-      storytelling, or visual communication.
+<section id="about" class="py-40">
+  <div class="max-w-3xl mx-auto px-10">
+    <h2 class="font-bricolage text-4xl mb-10">About</h2>
+    <p class="font-lexend text-lg leading-relaxed text-gray-700">
+      I’m a third-year English Language Studies student with a strong interest in
+      writing, visual art, and digital design. My work lives at the intersection
+      of language, culture, and aesthetics — where meaning is built not only
+      through words, but through form.
     </p>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="py-32 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-10">
-    <h2 class="text-4xl font-bold mb-16">Projects</h2>
+<section id="projects" class="py-40 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-10">
+    <h2 class="font-bricolage text-4xl mb-20">Projects</h2>
 
-    <div class="grid md:grid-cols-3 gap-12">
-      <a href="writing.html" class="group">
-        <h3 class="text-xl font-semibold group-hover:underline">Writing</h3>
-        <p class="text-gray-600 mt-2">Essays and poems</p>
-      </a>
-
-      <a href="artworks.html" class="group">
-        <h3 class="text-xl font-semibold group-hover:underline">Artwork</h3>
-        <p class="text-gray-600 mt-2">Digital and traditional works</p>
-      </a>
-
-      <a href="design.html" class="group">
-        <h3 class="text-xl font-semibold group-hover:underline">Design</h3>
-        <p class="text-gray-600 mt-2">Layouts and presentations</p>
-      </a>
+    <div class="grid md:grid-cols-3 gap-16 text-lg">
+      <a href="writing.html" class="hover:underline">Writing</a>
+      <a href="artworks.html" class="hover:underline">Artwork</a>
+      <a href="design.html" class="hover:underline">Design</a>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-32">
-  <div class="max-w-4xl mx-auto px-10">
-    <h2 class="text-4xl font-bold mb-8">Contact</h2>
-    <p class="text-lg mb-6">Want to collaborate or just say hi?</p>
+<section id="contact" class="py-40">
+  <div class="max-w-3xl mx-auto px-10">
+    <h2 class="font-bricolage text-4xl mb-10">Contact</h2>
 
-    <a href="mailto:karllexterdulce@gmail.com"
-       class="inline-block border border-black px-6 py-2 text-sm font-medium hover:bg-black hover:text-white transition">
+    <a
+      href="mailto:karllexterdulce@gmail.com"
+      class="inline-block text-sm tracking-widest uppercase border border-black px-6 py-3 hover:bg-black hover:text-white transition"
+    >
       karllexterdulce@gmail.com
     </a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-12 text-center text-sm text-gray-500">
+<footer class="py-16 text-center text-xs text-gray-400">
   © 2025 Karl Dulce
 </footer>
 
