@@ -19,6 +19,25 @@
             lexend: ['Lexend', 'sans-serif'],
             bricolage: ['Bricolage Grotesque', 'sans-serif'],
           },
+          animation: {
+            'slide-left': 'slideLeft 1s ease-out forwards',
+            'slide-right': 'slideRight 1s ease-out forwards',
+            'photo-in': 'photoIn 1.1s ease-out forwards',
+          },
+          keyframes: {
+            slideLeft: {
+              '0%': { transform: 'translateX(-80px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            },
+            slideRight: {
+              '0%': { transform: 'translateX(80px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            },
+            photoIn: {
+              '0%': { transform: 'rotate(0deg) scale(0.95)', opacity: '0' },
+              '100%': { transform: 'rotate(2deg) scale(1)', opacity: '1' },
+            },
+          },
         },
       },
     }
@@ -40,26 +59,16 @@
 </header>
 
 <!-- HERO -->
-<section id="top" class="min-h-screen flex items-center justify-center relative pt-24">
-
-  <!-- CTAs -->
-  <div class="absolute top-32 left-10 flex flex-col gap-4">
-    <a href="#projects" class="text-xs uppercase tracking-widest border border-black px-4 py-2 hover:bg-black hover:text-white transition">
-      Explore Works
-    </a>
-    <a href="#contact" class="text-xs uppercase tracking-widest border border-black px-4 py-2 hover:bg-black hover:text-white transition">
-      Connect With Me
-    </a>
-  </div>
+<section id="top" class="min-h-screen flex flex-col items-center justify-center pt-24 relative">
 
   <!-- KA PHOTO RL -->
-  <div class="flex items-center justify-center gap-10">
+  <div class="flex items-center justify-center gap-4 md:gap-6">
 
-    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold select-none">
+    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold opacity-0 animate-slide-left">
       KA
     </h1>
 
-    <div class="w-[22vw] max-w-[260px] rotate-[2deg]">
+    <div class="w-[22vw] max-w-[260px] opacity-0 animate-photo-in">
       <img
         src="images/karl_pogi.jpg"
         alt="Portrait of Karl"
@@ -67,16 +76,31 @@
       />
     </div>
 
-    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold select-none">
+    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold opacity-0 animate-slide-right">
       RL
     </h1>
 
   </div>
 
-  <!-- Subtitle -->
-  <p class="absolute bottom-24 text-[11px] tracking-widest uppercase text-center">
-    English Language Studies • Creative Artist • Digital Designer
-  </p>
+  <!-- Subtitle + Buttons -->
+  <div class="mt-12 flex flex-col items-center gap-6">
+
+    <p class="text-[11px] tracking-widest uppercase text-center">
+      English Language Studies • Creative Artist • Digital Designer
+    </p>
+
+    <div class="flex gap-4">
+      <a href="#projects"
+         class="text-xs uppercase tracking-widest border border-black px-5 py-2 hover:bg-black hover:text-white transition">
+        Explore Works
+      </a>
+      <a href="#contact"
+         class="text-xs uppercase tracking-widest border border-black px-5 py-2 hover:bg-black hover:text-white transition">
+        Connect With Me
+      </a>
+    </div>
+
+  </div>
 
 </section>
 
@@ -85,10 +109,9 @@
   <div class="max-w-3xl mx-auto px-10">
     <h2 class="font-bricolage text-4xl mb-10">About</h2>
     <p class="font-lexend text-lg leading-relaxed text-gray-700">
-      I’m a third-year English Language Studies student with a strong interest in
-      writing, visual art, and digital design. My work lives at the intersection
-      of language, culture, and aesthetics — where meaning is built not only
-      through words, but through form.
+      I’m a third-year English Language Studies student interested in writing,
+      visual art, and digital design. My work focuses on how language, visuals,
+      and structure shape meaning.
     </p>
   </div>
 </section>
