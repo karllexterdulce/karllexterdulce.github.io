@@ -1,40 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karl's Portfolio | Editorial Cyber Minimalist Design</title>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karl's Portfolio | Editorial Cyber Minimalist Design</title>
+    <meta name="description" content="Professional portfolio of Karl - English Language Studies student, artist, and creative professional with expertise in writing, design, and digital art.">
 
-  <!-- Tailwind & Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&display=swap">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-  <style>
-    /* Animation Keyframes */
-    @keyframes photoFadeTilt { 0% {opacity:0; transform:rotate(0deg);} 50% {opacity:1; transform:rotate(0deg);} 100% {opacity:1; transform:rotate(2deg);} }
-    @keyframes slideLeftDelay { 0% {opacity:0; transform:translateX(-80px);} 100% {opacity:1; transform:translateX(0);} }
-    @keyframes slideRightDelay { 0% {opacity:0; transform:translateX(80px);} 100% {opacity:1; transform:translateX(0);} }
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
 
-    .animate-photo-fade-tilt { animation: photoFadeTilt 1.8s ease-out forwards; animation-delay:0.3s; }
-    .animate-slide-left-delay { animation: slideLeftDelay 1s ease-out forwards; animation-delay:1.5s; }
-    .animate-slide-right-delay { animation: slideRightDelay 1s ease-out forwards; animation-delay:1.5s; }
-  </style>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'editorial-black': '#121212',
+            'editorial-gray': '#2d2d2d',
+            'editorial-light': '#f8f8f8',
+            'accent-blue': '#3a86ff',
+            'accent-cyan': '#00bbf9',
+          },
+          fontFamily: {
+            lexend: ['Lexend', 'sans-serif'],
+            bricolage: ['Bricolage Grotesque', 'sans-serif'],
+          },
+          animation: {
+            'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'slide-left': 'slideLeft 1s ease-out forwards',
+            'slide-right': 'slideRight 1s ease-out forwards',
+            'photo-in': 'photoIn 1.2s ease-out forwards',
+            'float-soft': 'floatSoft 8s ease-in-out infinite',
+          },
+          keyframes: {
+            pulseSubtle: { '0%,100%': { opacity: '0.7' }, '50%': { opacity: '1' } },
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+            slideLeft: { '0%': { transform: 'translateX(-80px)', opacity: '0' }, '100%': { transform: 'translateX(0)', opacity: '1' } },
+            slideRight: { '0%': { transform: 'translateX(80px)', opacity: '0' }, '100%': { transform: 'translateX(0)', opacity: '1' } },
+            photoIn: { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
+            floatSoft: { '0%,100%': { transform: 'translateY(0) rotate(0deg)' }, '50%': { transform: 'translateY(-14px) rotate(1.5deg)' } },
+          },
+        },
+      },
+    }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #f0f0f0 100%);
+            background-attachment: fixed;
+            color: #121212;
+        }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.1); }
+        .glass-card { background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(0,0,0,0.08); }
+        .text-glow { text-shadow: 0 0 10px rgba(58,134,255,0.3); }
+        .gradient-text { background: linear-gradient(90deg, #121212, #2d2d2d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-border { position: relative; border: 2px solid transparent; background: linear-gradient(#ffffff,#ffffff) padding-box, linear-gradient(90deg,#121212,#2d2d2d) border-box; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: linear-gradient(90deg,#121212,#2d2d2d); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .project-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .project-card:hover { transform: translateY(-10px) scale(1.02); }
+        .typewriter { overflow: hidden; border-right: 2px solid #2d2d2d; white-space: nowrap; animation: typing 3.5s steps(40,end), blink-caret 0.75s step-end infinite; }
+        @keyframes typing { from { width:0 } to { width:100% } }
+        @keyframes blink-caret { from,to { border-color:transparent } 50% { border-color:#2d2d2d } }
+
+        /* Hero Animations */
+        @keyframes photoFadeTilt {
+          0%   { opacity: 0; transform: rotate(0deg); }
+          50%  { opacity: 1; transform: rotate(0deg); }
+          100% { opacity: 1; transform: rotate(2deg); }
+        }
+        @keyframes slideLeftDelay {
+          0%   { opacity: 0; transform: translateX(-80px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideRightDelay {
+          0%   { opacity: 0; transform: translateX(80px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-photo-fade-tilt { animation: photoFadeTilt 1.8s ease-out forwards; animation-delay: 0.3s; }
+        .animate-slide-left-delay { animation: slideLeftDelay 1s ease-out forwards; animation-delay: 1.5s; }
+        .animate-slide-right-delay { animation: slideRightDelay 1s ease-out forwards; animation-delay: 1.5s; }
+    </style>
 </head>
 
 <body class="min-h-screen text-editorial-black font-lexend overflow-x-hidden">
-  
-  <!-- Navigation -->
-  <header> ... </header>
 
-  <!-- Hero -->
-  <section id="top" class="flex items-center justify-center min-h-screen gap-4">
-    <h1 class="animate-slide-left-delay font-bricolage text-[18vw]">KA</h1>
-    <div id="photo-wrap" class="animate-photo-fade-tilt w-[22vw] max-w-[260px]">
-      <img src="images/karl_pogi1.jpg" alt="Karl" class="w-full h-auto object-cover rounded-2xl shadow-2xl"/>
+<!-- Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50">
+  <nav class="glass-panel py-4 px-6">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center space-x-2 mb-4 md:mb-0">
+        <div class="w-3 h-3 rounded-full bg-editorial-black animate-pulse-subtle"></div>
+        <h1 class="font-lexend text-xl font-bold text-editorial-black tracking-tight">KARL DULCE</h1>
+      </div>
+      <div class="flex space-x-8">
+        <a href="#top" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">HOME</a>
+        <a href="#about" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">ABOUT</a>
+        <a href="#projects" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">PROJECTS</a>
+        <a href="cv.html" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">CV</a>
+        <a href="#contact" class="nav-link relative font-lexend text-sm font-medium hover:text-editorial-gray transition-colors duration-300">CONTACT</a>
+      </div>
     </div>
-    <h1 class="animate-slide-right-delay font-bricolage text-[18vw]">RL</h1>
-  </section>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" class="min-h-screen flex flex-col items-center justify-center pt-24 relative">
+  <div class="relative flex items-center justify-center gap-4">
+
+    <!-- KA -->
+    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold opacity-0 animate-slide-left-delay">
+      KA
+    </h1>
+
+    <!-- Photo -->
+    <div id="photo-wrap" class="w-[22vw] max-w-[260px] opacity-0 animate-photo-fade-tilt transition-transform duration-500 ease-out">
+      <img src="images/karl_pogi1.jpg" alt="Portrait of Karl" class="w-full h-auto object-cover rounded-2xl shadow-2xl" />
+    </div>
+
+    <!-- RL -->
+    <h1 class="font-bricolage text-[18vw] leading-none font-extrabold opacity-0 animate-slide-right-delay">
+      RL
+    </h1>
+
+  </div>
+</section>
 
   <!-- About / Projects / Contact / Footer -->
   <section id="about"> ... </section>
