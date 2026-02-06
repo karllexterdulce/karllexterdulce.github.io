@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,55 +12,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'editorial-black': '#121212',
-                        'editorial-gray': '#2d2d2d',
-                        'editorial-light': '#f8f8f8',
-                        'accent-blue': '#3a86ff',
-                        'accent-cyan': '#00bbf9',
-                        'glass-dark': 'rgba(18, 18, 18, 0.7)',
-                        'glass-light': 'rgba(45, 45, 45, 0.5)',
-                        'cyber-dark': '#0a0f19',
-                        'cyber-darker': '#050811',
-                    },
-                    fontFamily: {
-                        'lexend': ['Lexend', 'sans-serif'],
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                    },
-                    backdropBlur: {
-                        'glass': '12px',
-                    },
-                    boxShadow: {
-                        'editorial': '0 8px 32px rgba(0, 0, 0, 0.1)',
-                        'editorial-strong': '0 12px 48px rgba(0, 0, 0, 0.15)',
-                        'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
-                    },
-                    animation: {
-                        'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        'pulse-subtle': {
-                            '0%, 100%': { 'opacity': '0.7' },
-                            '50%': { 'opacity': '1' },
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                          fontFamily: {
-  lexend: ['Lexend', 'sans-serif'],
-  orbitron: ['Orbitron', 'sans-serif'],
-  bricolage: ['Bricolage Grotesque', 'sans-serif'],
-},
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'editorial-black': '#121212',
+        'editorial-gray': '#2d2d2d',
+        'editorial-light': '#f8f8f8',
+        'accent-blue': '#3a86ff',
+        'accent-cyan': '#00bbf9',
+      },
+
+      fontFamily: {
+        lexend: ['Lexend', 'sans-serif'],
+        orbitron: ['Orbitron', 'sans-serif'],
+        bricolage: ['Bricolage Grotesque', 'sans-serif'],
+      },
+
+      animation: {
+        'slide-left': 'slideLeft 1s ease-out forwards',
+        'slide-right': 'slideRight 1s ease-out forwards',
+        'photo-in': 'photoIn 1.1s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+      },
+
+      keyframes: {
+        slideLeft: {
+          '0%': { transform: 'translateX(-80px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideRight: {
+          '0%': { transform: 'translateX(80px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        photoIn: {
+          '0%': { transform: 'rotate(0deg) scale(0.95)', opacity: '0' },
+          '100%': { transform: 'rotate(2deg) scale(1)', opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+    },
+  },
+}
+</script>
     <style>
         html {
             scroll-behavior: smooth;
